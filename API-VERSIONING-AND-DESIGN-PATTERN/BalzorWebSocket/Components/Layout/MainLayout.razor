@@ -1,0 +1,51 @@
+﻿@inherits LayoutComponentBase
+@inject IJSRuntime JS
+
+<div class="page">
+    <div class="sidebar">
+        <NavMenu />
+    </div>
+
+    <main>
+        <div class="top-row px-4">
+            <a href="https://learn.microsoft.com/aspnet/core/" target="_blank">About</a>
+        </div>
+
+        <article class="content px-4">
+            <h2>Notifications</h2>
+            <div id="log"> @notificationMessage</div>
+            <br />
+            @Body
+        </article>
+    </main>
+</div>
+
+@code {
+    private string notificationMessage = "No messages yet";
+    protected override Task OnInitializedAsync()
+    {
+        return base.OnInitializedAsync();
+    }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        await _js.InvokeVoidAsync("initWebSocket", DotNetObjectReference.Create(this), "monaem");
+    }
+    [JSInvokable] // This makes it callable from JS
+    public void ReceiveNotification(string message)
+    {
+        notificationMessage = message;
+        StateHasChanged(); // refresh UI
+    }
+}
+
+<script>
+    function initWebSocket(dotnetRef,userId) {
+        const socket = new WebSocket(`wss://localhost:7288/api/ws?userId=${userId}`);
+
+        socket.onopen = () => {};
+        socket.onmessage = (event) => {dotnetRef.invokeMethodAsync('ReceiveNotification', event.data);};
+        socket.onclose = () => {};
+        socket.onerror = (err) => {};
+    }
+</script>
