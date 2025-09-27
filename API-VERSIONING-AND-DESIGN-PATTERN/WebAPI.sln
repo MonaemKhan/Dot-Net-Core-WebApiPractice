@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CancleTokenPactice", "Cancl
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BalzorWebSocket", "BalzorWebSocket\BalzorWebSocket.csproj", "{5C58B800-1AFF-42CC-83D9-83456B4ADFB0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CLassAtrName", "CLassAtrName\CLassAtrName.csproj", "{C0287244-4324-4225-B5E4-9E913DE733A9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{5C58B800-1AFF-42CC-83D9-83456B4ADFB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5C58B800-1AFF-42CC-83D9-83456B4ADFB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5C58B800-1AFF-42CC-83D9-83456B4ADFB0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C0287244-4324-4225-B5E4-9E913DE733A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0287244-4324-4225-B5E4-9E913DE733A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0287244-4324-4225-B5E4-9E913DE733A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0287244-4324-4225-B5E4-9E913DE733A9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
