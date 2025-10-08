@@ -47,7 +47,7 @@ namespace MedXDataCollection
                                 NAME = match.Groups["name"].Value.Trim(),
                                 STREANGTH = match.Groups["strength"].Value.Trim(),
                             };
-                            dataCollection.FULLNAMESET();
+                            dataCollection.FULLNAME = dataCollection.NAME + " " + dataCollection.STREANGTH;
                             dataCollections.Add(dataCollection);
                         }
                     }
@@ -86,7 +86,7 @@ namespace MedXDataCollection
                                     NAME = match.Groups["name"].Value.Trim(),
                                     STREANGTH = match.Groups["strength"].Value.Trim(),
                                 };
-                                dataCollection.FULLNAMESET();
+                                dataCollection.FULLNAME = dataCollection.NAME + " " + dataCollection.STREANGTH;
                                 dataCollections.Add(dataCollection);
                             }
                         }
