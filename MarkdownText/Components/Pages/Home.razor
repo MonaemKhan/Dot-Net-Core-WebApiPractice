@@ -1,0 +1,118 @@
+﻿@page "/"
+
+<PageTitle>Home</PageTitle>
+
+<style>
+    .markdownOutter {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 20px;
+    }
+
+        .markdownOutter > div {
+            flex: 1;
+        }
+</style>
+
+<div>
+    <textarea rows="10" cols="50" @bind="textInput"></textarea>
+</div>
+<button @onclick="TransformText">Preview</button>
+<div>
+    <div>
+        @((MarkupString)textOutput)
+    </div>
+</div>
+
+
+@code {
+    private string textInput = string.Empty;
+    private string textOutput = string.Empty;
+
+    private void TransformText()
+    {
+        textOutput = "";
+        var textstr = textInput.Split("\n");
+
+        foreach (string obj in textstr)
+        {
+            var data = obj;
+            data = obj.Trim();
+            data = obj.Replace("\\n", "");
+
+            string startTag = "";
+            string endTag = "";
+            string content = "";
+            string style = " style=\"";
+
+            foreach (string key in data.Split(" "))
+            {
+                switch (key)
+                {
+                    case "#":
+                        startTag = "<h1";
+                        endTag = "</h1>";
+                        break;
+                    case "##":
+                        startTag = "<h2";
+                        endTag = "</h2>";
+                        break;
+                    case "###":
+                        startTag = "<h3";
+                        endTag = "</h3>";
+                        break;
+                    case "<>":
+                        style = style + "text-align:center;";
+                        break;
+                    case ">":
+                        style = style + "text-align:right;";
+                        break;
+                    case "<":
+                        style = style + "text-align:left;";
+                        break;
+                    case "**":
+                        style = style + "font-weight:bolder;";
+                        break;
+                    case "*l*":
+                        style = style + "font-style:italic;";
+                        break;
+                    default:
+                        content = content.Trim() + " " + transformText(key);
+                        break;
+                }
+            }
+
+            if (string.IsNullOrEmpty(startTag))
+            {
+                startTag = "<p";
+                endTag = "</p>";
+            }
+
+            if (string.IsNullOrEmpty(style))
+            {
+                textOutput = textOutput + startTag + ">" + content.Trim() + endTag + "<br/>";
+            }
+            else
+            {
+                textOutput = textOutput + startTag + style + "\">" + content.Trim() + endTag + "<br/>";
+            }
+        }
+    }
+
+    private string transformText(string key)
+    {
+        if (key.StartsWith("''"))
+        {
+            key = key.Replace("'", "");
+            key = "'" + key + "'";
+        }
+        else if (key.StartsWith("'"))
+        {
+            key = key.Replace("'", "");
+            key = "<strong>" + key+"</strong>";
+        }
+
+        return key;
+    }
+}
