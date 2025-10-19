@@ -1,0 +1,6 @@
+@SqLiteImplementation_HostAddress = http://localhost:5137
+
+GET {{SqLiteImplementation_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BalzorWebSocket", "BalzorWe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassObjectMapping", "ClassObjectMapping\ClassObjectMapping.csproj", "{58399ABC-2B10-4106-9F85-7E867CE1B212}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SqLiteImplementation", "SqLiteImplementation\SqLiteImplementation.csproj", "{EDD35687-ACBC-4E4E-98B2-0B47AC1E6A56}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{58399ABC-2B10-4106-9F85-7E867CE1B212}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{58399ABC-2B10-4106-9F85-7E867CE1B212}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{58399ABC-2B10-4106-9F85-7E867CE1B212}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EDD35687-ACBC-4E4E-98B2-0B47AC1E6A56}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EDD35687-ACBC-4E4E-98B2-0B47AC1E6A56}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EDD35687-ACBC-4E4E-98B2-0B47AC1E6A56}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EDD35687-ACBC-4E4E-98B2-0B47AC1E6A56}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
