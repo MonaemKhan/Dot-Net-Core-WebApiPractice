@@ -2,13 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Data.Sqlite;
 
 namespace SqLiteImplementation.Controllers
-{
-    public class Product
-    {
-        public string Name { get; set; }
-        public double Price { get; set; }
-        public int Quantity { get; set; }
-    }
+{    
     [ApiController]
     [Route("[controller]")]
     public class WeatherForecastController : ControllerBase
@@ -58,12 +52,22 @@ namespace SqLiteImplementation.Controllers
             ";
                 tableCmd.ExecuteNonQuery();
 
+                var command = connection.CreateCommand();
+                command.CommandText = "PRAGMA journal_mode=WAL;";
+                command.ExecuteNonQuery();
+
+                command = connection.CreateCommand();
+                command.CommandText = "PRAGMA busy_timeout = 5000;";
+                command.ExecuteNonQuery(); // Must run every connection open
+
+                connection.Close();
+
                 return Ok("Database and Products table created successfully!");
             }
         }
 
         [HttpPost("AddProduct")]
-        public IActionResult AddProduct([FromBody] Product product)
+        public IActionResult AddProduct([FromBody] ProductModel product)
         {
             string connectionString = "Data Source=product.db";
             using (var connection = new SqliteConnection(connectionString))
@@ -78,6 +82,7 @@ namespace SqLiteImplementation.Controllers
                 insertCmd.Parameters.AddWithValue("$price", product.Price);
                 insertCmd.Parameters.AddWithValue("$quantity", product.Quantity);
                 int rowsAffected = insertCmd.ExecuteNonQuery();
+                connection.Close();
                 return Ok($"{rowsAffected} product(s) added successfully!");
             }
         }
@@ -85,27 +90,30 @@ namespace SqLiteImplementation.Controllers
         [HttpGet("GetProducts")]
         public IActionResult GetProducts()
         {
-            string connectionString = "Data Source=product.db";
-            var products = new List<Product>();
-            using (var connection = new SqliteConnection(connectionString))
-            {
-                connection.Open();
-                var selectCmd = connection.CreateCommand();
-                selectCmd.CommandText = "SELECT Name, Price, Quantity FROM Products;";
-                using (var reader = selectCmd.ExecuteReader())
-                {
-                    while (reader.Read())
-                    {
-                        var product = new Product
-                        {
-                            Name = reader.GetString(0),
-                            Price = reader.GetDouble(1),
-                            Quantity = reader.GetInt32(2)
-                        };
-                        products.Add(product);
-                    }
-                }
-            }
+            using var dbContext = new SqlLiteDbContext();
+            var products = dbContext.productModels.ToList();
+            //string connectionString = "Data Source=product.db";
+            //var products = new List<ProductModel>();
+            //using (var connection = new SqliteConnection(connectionString))
+            //{
+            //    connection.Open();
+            //    var selectCmd = connection.CreateCommand();
+            //    selectCmd.CommandText = "SELECT Name, Price, Quantity FROM Products;";
+            //    using (var reader = selectCmd.ExecuteReader())
+            //    {
+            //        while (reader.Read())
+            //        {
+            //            var product = new ProductModel
+            //            {
+            //                Name = reader.GetString(0),
+            //                Price = reader.GetDouble(1),
+            //                Quantity = reader.GetInt32(2)
+            //            };
+            //            products.Add(product);
+            //        }
+            //    }
+            //    connection.Close();
+            //}
             return Ok(products);
         }
     }
