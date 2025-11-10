@@ -1,0 +1,22 @@
+﻿@inject ClientInfoService ClientInfoService
+@page "/"
+
+<PageTitle>Home</PageTitle>
+
+<h1>Client IP - @clientIp</h1>
+<h1>Client REM IP - @clientRemIp</h1>
+
+
+@code{
+    string clientIp = string.Empty;
+    string clientRemIp = string.Empty;
+    string clientPort = string.Empty;
+    string clientHostName = string.Empty;
+
+    protected override async Task OnInitializedAsync()
+    {
+        var clientInfo = ClientInfoService.GetClientIp();
+        clientIp = clientInfo?.LocalIpAddress?.ToString();
+        clientRemIp = clientInfo?.RemoteIpAddress?.ToString();
+    }
+}
