@@ -9,6 +9,8 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddHttpContextAccessor();
+
 builder.Services.AddScoped<IPayment,BkashPayment>();
 builder.Services.AddScoped<IPayment,RocketPayment>();
 builder.Services.AddScoped<IPayment,NagadPayment>();
