@@ -12,10 +12,13 @@ namespace APICOOKIESTESTING.Controllers
         };
 
         private readonly ILogger<WeatherForecastController> _logger;
+        private readonly IUserManagement _userManagement;
 
-        public WeatherForecastController(ILogger<WeatherForecastController> logger)
+        public WeatherForecastController(ILogger<WeatherForecastController> logger,
+            IUserManagement userManagement)
         {
             _logger = logger;
+            _userManagement = userManagement;
         }
 
         [HttpGet(Name = "GetWeatherForecast")]
@@ -28,6 +31,18 @@ namespace APICOOKIESTESTING.Controllers
                 Summary = Summaries[Random.Shared.Next(Summaries.Length)]
             })
             .ToArray();
+        }
+
+        [HttpPost]
+        public void AddUser(string username)
+        {
+            _userManagement.AddUser(username);
+        }
+
+        [HttpGet("OK")]
+        public List<string> GetAllUsers()
+        {
+            return _userManagement.GetAllUsers();
         }
     }
 }

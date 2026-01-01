@@ -13,16 +13,16 @@
         
         {
             var token = context.Request.Cookies["access_token"];
-            if(context.Request.Path == "/api/Login/login")
-            {
+            //if(context.Request.Path == "/api/Login/login")
+            //{
                 
-            }
-            else if (string.IsNullOrEmpty(token))
-            {
-                context.Response.StatusCode = 401; // Unauthorized
-                await context.Response.WriteAsync("Unauthorized Access");
-                return;
-            }
+            //}
+            //else if (string.IsNullOrEmpty(token))
+            //{
+            //    context.Response.StatusCode = 401; // Unauthorized
+            //    await context.Response.WriteAsync("Unauthorized Access");
+            //    return;
+            //}
             await _requestDelegate(context);
         }
     }
