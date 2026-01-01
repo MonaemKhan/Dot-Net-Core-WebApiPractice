@@ -48,5 +48,3 @@ app.MapGet("/api/data", () =>
 });
 
 app.Run();
-
-app.Run();
