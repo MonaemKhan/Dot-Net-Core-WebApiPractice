@@ -20,18 +20,23 @@ builder.Services.AddCors(options =>
     });
 });
 
+builder.Services.AddSignalR();
+
 var app = builder.Build();
 
+app.MapHub<NotificationHub>("/hubs/notification");
+
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+
+app.UseSwagger();
+app.UseSwaggerUI();
+
 app.UseCors("Frontend");
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
+
+app.UseMiddleware<CookiesMiddleware>();
 
 app.MapControllers();
 

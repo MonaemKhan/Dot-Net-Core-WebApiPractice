@@ -1,5 +1,6 @@
 import { Component, OnInit, signal } from '@angular/core';
 import { AuthService } from './service/auth.service';
+import { SignalRService } from './service/signal-r.service';
 
 @Component({
   selector: 'app-root',
@@ -7,9 +8,16 @@ import { AuthService } from './service/auth.service';
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
-export class App {
+export class App implements OnInit {
+  message:string='';
+  constructor(private authService: AuthService, private signalRService: SignalRService) { }
+  ngOnInit(): void {
+    this.signalRService.startConnection();
 
-  constructor(private authService: AuthService) { }
+    this.signalRService.onMessage(message => {
+      this.message= this.message + ' \n ' +message;
+    });
+  }
 
   protected readonly title = signal('cookiesSendRecive');
 

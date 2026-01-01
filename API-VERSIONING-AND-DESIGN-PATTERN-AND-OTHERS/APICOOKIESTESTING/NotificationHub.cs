@@ -1,0 +1,20 @@
+﻿using Microsoft.AspNetCore.SignalR;
+
+namespace APICOOKIESTESTING
+{
+    public class NotificationHub : Hub
+    {
+        public override async Task OnConnectedAsync()
+        {
+            var userId = Context.GetHttpContext()?.Request.Query["userId"].ToString();
+
+            if (!string.IsNullOrEmpty(userId))
+            {
+                // Save connection in a group
+                await Groups.AddToGroupAsync(Context.ConnectionId, userId);
+            }
+
+            await base.OnConnectedAsync();
+        }
+    }
+}
