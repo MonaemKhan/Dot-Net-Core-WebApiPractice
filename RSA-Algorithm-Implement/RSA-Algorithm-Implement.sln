@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36603.0 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RSA-Algorithm-Implement", "RSA-Algorithm-Implement\RSA-Algorithm-Implement.csproj", "{B567A333-7B53-40AE-B44D-F8BE681216B5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RSA-Algorithm", "RSA-Algorithm\RSA-Algorithm.csproj", "{BDBA1542-2472-4877-BA74-041A3F6D7CE0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B567A333-7B53-40AE-B44D-F8BE681216B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B567A333-7B53-40AE-B44D-F8BE681216B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B567A333-7B53-40AE-B44D-F8BE681216B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B567A333-7B53-40AE-B44D-F8BE681216B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BDBA1542-2472-4877-BA74-041A3F6D7CE0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BDBA1542-2472-4877-BA74-041A3F6D7CE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BDBA1542-2472-4877-BA74-041A3F6D7CE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BDBA1542-2472-4877-BA74-041A3F6D7CE0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {89C05000-EF89-48B6-8F2F-A3DACEBBBB58}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,6 @@
+@RSA_Algorithm_Implement_HostAddress = http://localhost:5116
+
+GET {{RSA_Algorithm_Implement_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
