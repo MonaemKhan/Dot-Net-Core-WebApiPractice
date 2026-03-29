@@ -1,0 +1,4928 @@
+[
+  {
+    "Id": 1,
+    "TableName": "ABS_MONTH_END_LOG",
+    "Columns": [
+      {
+        "ColumnName": "PROCESS_DT",
+        "DataType": "DATE",
+        "DataLength": 7,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "REQ_NO",
+        "DataType": "NVARCHAR2",
+        "DataLength": 40,
+        "IsNullable": false,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "REFERENCE1",
+        "DataType": "NVARCHAR2",
+        "DataLength": 40,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "REFERENCE2",
+        "DataType": "NVARCHAR2",
+        "DataLength": 40,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "REFERENCE3",
+        "DataType": "NVARCHAR2",
+        "DataLength": 40,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "REF_NO",
+        "DataType": "NVARCHAR2",
+        "DataLength": 40,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "RESPONSE_CODE",
+        "DataType": "NVARCHAR2",
+        "DataLength": 10,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "RESPONSE_MSG",
+        "DataType": "NVARCHAR2",
+        "DataLength": 300,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "REQUEST_DATA",
+        "DataType": "NVARCHAR2",
+        "DataLength": 1000,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "RESPONSE_DATA",
+        "DataType": "NVARCHAR2",
+        "DataLength": 1000,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "BRANCH_ID",
+        "DataType": "NVARCHAR2",
+        "DataLength": 20,
+        "IsNullable": false,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "BATCH_NO",
+        "DataType": "NUMBER",
+        "DataLength": 22,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "TRACER_NO",
+        "DataType": "NUMBER",
+        "DataLength": 22,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "FUNCTION_ID",
+        "DataType": "NVARCHAR2",
+        "DataLength": 14,
+        "IsNullable": false,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "TRANS_DT",
+        "DataType": "DATE",
+        "DataLength": 7,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "DR_CR",
+        "DataType": "NVARCHAR2",
+        "DataLength": 2,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "GL_ACC_SL",
+        "DataType": "NVARCHAR2",
+        "DataLength": 22,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "ACCOUNT_NO",
+        "DataType": "NVARCHAR2",
+        "DataLength": 100,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "CURRENCY_ID",
+        "DataType": "NVARCHAR2",
+        "DataLength": 6,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "AMOUNT_CCY",
+        "DataType": "NUMBER",
+        "DataLength": 22,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "AMOUNT_LCY",
+        "DataType": "NUMBER",
+        "DataLength": 22,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "NARRATION",
+        "DataType": "NVARCHAR2",
+        "DataLength": 1000,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "AUTH_STATUS_ID",
+        "DataType": "NVARCHAR2",
+        "DataLength": 2,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "MAKE_BY",
+        "DataType": "NVARCHAR2",
+        "DataLength": 30,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "MAKE_DT",
+        "DataType": "DATE",
+        "DataLength": 7,
+        "IsNullable": true,
+        "DefaultValue": "SYSDATE"
+      },
+      {
+        "ColumnName": "AUTH_1ST_BY",
+        "DataType": "NVARCHAR2",
+        "DataLength": 30,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "AUTH_1ST_DT",
+        "DataType": "DATE",
+        "DataLength": 7,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "AUTH_2ND_BY",
+        "DataType": "NVARCHAR2",
+        "DataLength": 30,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "AUTH_2ND_DT",
+        "DataType": "DATE",
+        "DataLength": 7,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "LAST_ACTION",
+        "DataType": "NVARCHAR2",
+        "DataLength": 6,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "YEAR",
+        "DataType": "NVARCHAR2",
+        "DataLength": 8,
+        "IsNullable": true,
+        "DefaultValue": null
+      }
+    ],
+    "Constraints": [
+      {
+        "ConstraintName": "PK_ABS_MONTH_END_LOG",
+        "ConstraintType": "P",
+        "ColumnsDetails": [
+          {
+            "ColumnName": "REQ_NO",
+            "Position": 1,
+            "ParentTable": null,
+            "ParentColumn": null,
+            "Condition": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Id": 2,
+    "TableName": "ACCOUNTS",
+    "Columns": [
+      {
+        "ColumnName": "ID",
+        "DataType": "NUMBER",
+        "DataLength": 22,
+        "IsNullable": false,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "ACC_NAME",
+        "DataType": "VARCHAR2",
+        "DataLength": 255,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "ACC_NO",
+        "DataType": "VARCHAR2",
+        "DataLength": 255,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "ACC_TYPE",
+        "DataType": "VARCHAR2",
+        "DataLength": 255,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "BANK_NAME",
+        "DataType": "VARCHAR2",
+        "DataLength": 255,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "BRANCH_NAME",
+        "DataType": "VARCHAR2",
+        "DataLength": 255,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "CUR_BALANCE",
+        "DataType": "FLOAT",
+        "DataLength": 22,
+        "IsNullable": true,
+        "DefaultValue": null
+      }
+    ],
+    "Constraints": []
+  },
+  {
+    "Id": 3,
+    "TableName": "ACCOUNT_INQUIRY",
+    "Columns": [
+      {
+        "ColumnName": "ID",
+        "DataType": "NUMBER",
+        "DataLength": 22,
+        "IsNullable": false,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "ACC_CURRENCY_ID",
+        "DataType": "VARCHAR2",
+        "DataLength": 255,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "ACCOUNT_NUMBER",
+        "DataType": "VARCHAR2",
+        "DataLength": 255,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "ACCOUNT_OPENING_DATE",
+        "DataType": "VARCHAR2",
+        "DataLength": 255,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "ACCOUNT_STATUS",
+        "DataType": "VARCHAR2",
+        "DataLength": 255,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "ACCOUNT_STATUS_ID",
+        "DataType": "VARCHAR2",
+        "DataLength": 255,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "ACCOUNT_TITLE",
+        "DataType": "VARCHAR2",
+        "DataLength": 255,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "ADDRESS1",
+        "DataType": "VARCHAR2",
+        "DataLength": 255,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "ADDRESS2",
+        "DataType": "VARCHAR2",
+        "DataLength": 255,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "AMOUNT_CCY",
+        "DataType": "NUMBER",
+        "DataLength": 22,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "AMOUNT_LCY",
+        "DataType": "NUMBER",
+        "DataLength": 22,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "APPL_SERIAL",
+        "DataType": "VARCHAR2",
+        "DataLength": 255,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "APPL_TYPE",
+        "DataType": "VARCHAR2",
+        "DataLength": 255,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "AVAILABLE_BALANCE",
+        "DataType": "NUMBER",
+        "DataLength": 22,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "BRANCH_CODE",
+        "DataType": "VARCHAR2",
+        "DataLength": 255,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "BRANCH_ID",
+        "DataType": "VARCHAR2",
+        "DataLength": 255,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "CHQ_NUMBER",
+        "DataType": "VARCHAR2",
+        "DataLength": 255,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "COMPANYID",
+        "DataType": "VARCHAR2",
+        "DataLength": 255,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "COMPANY_NAME",
+        "DataType": "VARCHAR2",
+        "DataLength": 255,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "CONNECTION_CODE",
+        "DataType": "VARCHAR2",
+        "DataLength": 255,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "COUNTRY_CODE",
+        "DataType": "VARCHAR2",
+        "DataLength": 255,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "COUNTRY_NAME",
+        "DataType": "VARCHAR2",
+        "DataLength": 255,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "CURRENCY_CODE",
+        "DataType": "VARCHAR2",
+        "DataLength": 255,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "CURRENCY_ID",
+        "DataType": "VARCHAR2",
+        "DataLength": 255,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "CUSTOMER_NAME",
+        "DataType": "VARCHAR2",
+        "DataLength": 255,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "CUSTOMER_TYPE",
+        "DataType": "VARCHAR2",
+        "DataLength": 255,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "DATE_OF_BIRTH",
+        "DataType": "VARCHAR2",
+        "DataLength": 255,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "DISTRICT",
+        "DataType": "VARCHAR2",
+        "DataLength": 255,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "DISTRICT_CODE",
+        "DataType": "VARCHAR2",
+        "DataLength": 255,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "EFT_DR_CR",
+        "DataType": "VARCHAR2",
+        "DataLength": 255,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "INSTL_AMT",
+        "DataType": "VARCHAR2",
+        "DataLength": 255,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "IS_VALID_INSTRUMENT",
+        "DataType": "VARCHAR2",
+        "DataLength": 255,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "LAST_TRANSCATION_DATE",
+        "DataType": "VARCHAR2",
+        "DataLength": 255,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "LAST_TRANSCATION_DR_CR_TYPE",
+        "DataType": "VARCHAR2",
+        "DataLength": 255,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "LOAN_ACCOUNT_STATUS_NAME",
+        "DataType": "VARCHAR2",
+        "DataLength": 255,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "LOAN_LIMIT_VERIFY_MSG",
+        "DataType": "VARCHAR2",
+        "DataLength": 255,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "MOBILE_NO",
+        "DataType": "VARCHAR2",
+        "DataLength": 255,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "NATIONAL_ID",
+        "DataType": "VARCHAR2",
+        "DataLength": 255,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "ORGN_AC_NO",
+        "DataType": "VARCHAR2",
+        "DataLength": 255,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "PAYEE_ACCNO",
+        "DataType": "VARCHAR2",
+        "DataLength": 255,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "PAYEE_BR_ID",
+        "DataType": "VARCHAR2",
+        "DataLength": 255,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "PAYEE_ROUTNO",
+        "DataType": "VARCHAR2",
+        "DataLength": 255,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "PERMANENT_ADDRESS",
+        "DataType": "VARCHAR2",
+        "DataLength": 255,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "PHONE_NO",
+        "DataType": "VARCHAR2",
+        "DataLength": 255,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "PLACE_OF_BIRTH",
+        "DataType": "VARCHAR2",
+        "DataLength": 255,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "PRESENT_ADDRESS",
+        "DataType": "VARCHAR2",
+        "DataLength": 255,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "PRODUCT_ID",
+        "DataType": "VARCHAR2",
+        "DataLength": 255,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "RSPD_AC_NO",
+        "DataType": "VARCHAR2",
+        "DataLength": 255,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "TRANS_AMOUNT_CCY",
+        "DataType": "NUMBER",
+        "DataLength": 22,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "TRANS_AMOUNT_LCY",
+        "DataType": "NUMBER",
+        "DataLength": 22,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "TRANS_CODE",
+        "DataType": "VARCHAR2",
+        "DataLength": 255,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "TRANS_TYPE",
+        "DataType": "VARCHAR2",
+        "DataLength": 255,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "TYPE_OF_ACCOUNT",
+        "DataType": "VARCHAR2",
+        "DataLength": 255,
+        "IsNullable": true,
+        "DefaultValue": null
+      }
+    ],
+    "Constraints": []
+  },
+  {
+    "Id": 4,
+    "TableName": "ADC_SMS_MSG",
+    "Columns": [
+      {
+        "ColumnName": "SMS_ID",
+        "DataType": "NUMBER",
+        "DataLength": 22,
+        "IsNullable": false,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "BRANCH_ID",
+        "DataType": "VARCHAR2",
+        "DataLength": 10,
+        "IsNullable": false,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "ACCOUNT_NO",
+        "DataType": "VARCHAR2",
+        "DataLength": 13,
+        "IsNullable": false,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "CUSTOMER_ID",
+        "DataType": "VARCHAR2",
+        "DataLength": 10,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "CELL_NO",
+        "DataType": "VARCHAR2",
+        "DataLength": 15,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "MSG_TXT",
+        "DataType": "VARCHAR2",
+        "DataLength": 500,
+        "IsNullable": false,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "MSG_SENT_FLAG",
+        "DataType": "NUMBER",
+        "DataLength": 22,
+        "IsNullable": false,
+        "DefaultValue": "0 "
+      },
+      {
+        "ColumnName": "REASON_FOR_FAIL",
+        "DataType": "VARCHAR2",
+        "DataLength": 255,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "SMS_INIT_TIME",
+        "DataType": "DATE",
+        "DataLength": 7,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "SMS_SENT_TIME",
+        "DataType": "DATE",
+        "DataLength": 7,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "SMS_TRY_NO",
+        "DataType": "NUMBER",
+        "DataLength": 22,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "SMS_FNC_ID",
+        "DataType": "NUMBER",
+        "DataLength": 22,
+        "IsNullable": true,
+        "DefaultValue": "0"
+      },
+      {
+        "ColumnName": "NOTI_SENT_FLAG",
+        "DataType": "NUMBER",
+        "DataLength": 22,
+        "IsNullable": true,
+        "DefaultValue": "0"
+      },
+      {
+        "ColumnName": "NOTI_SENT_TIME",
+        "DataType": "DATE",
+        "DataLength": 7,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "SMS_PROVIDER_MESSAGE_ID",
+        "DataType": "NUMBER",
+        "DataLength": 22,
+        "IsNullable": true,
+        "DefaultValue": "0"
+      },
+      {
+        "ColumnName": "SMS_PROVIDER_STATUS_CODE",
+        "DataType": "NUMBER",
+        "DataLength": 22,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "CHANNEL",
+        "DataType": "VARCHAR2",
+        "DataLength": 15,
+        "IsNullable": true,
+        "DefaultValue": null
+      }
+    ],
+    "Constraints": []
+  },
+  {
+    "Id": 5,
+    "TableName": "ADC_SMS_MSG_FLD",
+    "Columns": [
+      {
+        "ColumnName": "MSG_FLD_ID",
+        "DataType": "VARCHAR2",
+        "DataLength": 4,
+        "IsNullable": false,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "MSG_FLD_NM",
+        "DataType": "VARCHAR2",
+        "DataLength": 255,
+        "IsNullable": false,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "FLD_LOC",
+        "DataType": "VARCHAR2",
+        "DataLength": 255,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "AUTH_STATUS_ID",
+        "DataType": "NVARCHAR2",
+        "DataLength": 2,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "MAKE_BY",
+        "DataType": "NVARCHAR2",
+        "DataLength": 30,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "MAKE_DT",
+        "DataType": "DATE",
+        "DataLength": 7,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "AUTH_1ST_BY",
+        "DataType": "NVARCHAR2",
+        "DataLength": 30,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "AUTH_1ST_DT",
+        "DataType": "DATE",
+        "DataLength": 7,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "AUTH_2ND_BY",
+        "DataType": "NVARCHAR2",
+        "DataLength": 30,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "AUTH_2ND_DT",
+        "DataType": "DATE",
+        "DataLength": 7,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "LAST_ACTION",
+        "DataType": "NVARCHAR2",
+        "DataLength": 6,
+        "IsNullable": true,
+        "DefaultValue": null
+      }
+    ],
+    "Constraints": []
+  },
+  {
+    "Id": 6,
+    "TableName": "ADC_SMS_MSG_FLD1",
+    "Columns": [
+      {
+        "ColumnName": "MSG_FLD_ID",
+        "DataType": "VARCHAR2",
+        "DataLength": 4,
+        "IsNullable": false,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "MSG_FLD_NM",
+        "DataType": "VARCHAR2",
+        "DataLength": 255,
+        "IsNullable": false,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "FLD_LOC",
+        "DataType": "VARCHAR2",
+        "DataLength": 255,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "AUTH_STATUS_ID",
+        "DataType": "NVARCHAR2",
+        "DataLength": 2,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "MAKE_BY",
+        "DataType": "NVARCHAR2",
+        "DataLength": 30,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "MAKE_DT",
+        "DataType": "DATE",
+        "DataLength": 7,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "AUTH_1ST_BY",
+        "DataType": "NVARCHAR2",
+        "DataLength": 30,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "AUTH_1ST_DT",
+        "DataType": "DATE",
+        "DataLength": 7,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "AUTH_2ND_BY",
+        "DataType": "NVARCHAR2",
+        "DataLength": 30,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "AUTH_2ND_DT",
+        "DataType": "DATE",
+        "DataLength": 7,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "LAST_ACTION",
+        "DataType": "NVARCHAR2",
+        "DataLength": 6,
+        "IsNullable": true,
+        "DefaultValue": null
+      }
+    ],
+    "Constraints": []
+  },
+  {
+    "Id": 7,
+    "TableName": "ADC_SMS_MSG_FNC",
+    "Columns": [
+      {
+        "ColumnName": "MSG_FNC_ID",
+        "DataType": "NUMBER",
+        "DataLength": 22,
+        "IsNullable": false,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "MSG_FNC_NM",
+        "DataType": "VARCHAR2",
+        "DataLength": 255,
+        "IsNullable": false,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "MSG_TYP_ID",
+        "DataType": "NUMBER",
+        "DataLength": 22,
+        "IsNullable": false,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "MSG_TXT_DEF",
+        "DataType": "VARCHAR2",
+        "DataLength": 160,
+        "IsNullable": false,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "BU_FNC_ID",
+        "DataType": "NVARCHAR2",
+        "DataLength": 14,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "INCOMING_MSG",
+        "DataType": "NVARCHAR2",
+        "DataLength": 320,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "MSG_CODE",
+        "DataType": "NVARCHAR2",
+        "DataLength": 12,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "AUTH_STATUS_ID",
+        "DataType": "NVARCHAR2",
+        "DataLength": 2,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "MAKE_BY",
+        "DataType": "NVARCHAR2",
+        "DataLength": 30,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "MAKE_DT",
+        "DataType": "DATE",
+        "DataLength": 7,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "AUTH_1ST_BY",
+        "DataType": "NVARCHAR2",
+        "DataLength": 30,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "AUTH_1ST_DT",
+        "DataType": "DATE",
+        "DataLength": 7,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "AUTH_2ND_BY",
+        "DataType": "NVARCHAR2",
+        "DataLength": 30,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "AUTH_2ND_DT",
+        "DataType": "DATE",
+        "DataLength": 7,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "LAST_ACTION",
+        "DataType": "NVARCHAR2",
+        "DataLength": 6,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "MSG_BANK_NAME",
+        "DataType": "VARCHAR2",
+        "DataLength": 50,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "MSG_CODE_LENGTH",
+        "DataType": "NUMBER",
+        "DataLength": 22,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "MSG_CODE_SAMPLE",
+        "DataType": "VARCHAR2",
+        "DataLength": 100,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "MSG_OUTPUT_SUFFIX",
+        "DataType": "VARCHAR2",
+        "DataLength": 255,
+        "IsNullable": true,
+        "DefaultValue": null
+      }
+    ],
+    "Constraints": [
+      {
+        "ConstraintName": "FK_ADC_SMS_MSG_FNC_01",
+        "ConstraintType": "R",
+        "ColumnsDetails": [
+          {
+            "ColumnName": "MSG_TYP_ID",
+            "Position": 1,
+            "ParentTable": "ADC_SMS_MSG_TYP",
+            "ParentColumn": "MSG_TYP_ID",
+            "Condition": null
+          }
+        ]
+      },
+      {
+        "ConstraintName": "PK_ADC_SMS_MSG_FNC",
+        "ConstraintType": "P",
+        "ColumnsDetails": [
+          {
+            "ColumnName": "MSG_FNC_ID",
+            "Position": 1,
+            "ParentTable": null,
+            "ParentColumn": null,
+            "Condition": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Id": 8,
+    "TableName": "ADC_SMS_MSG_HIST",
+    "Columns": [
+      {
+        "ColumnName": "SMS_ID",
+        "DataType": "NUMBER",
+        "DataLength": 22,
+        "IsNullable": false,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "BRANCH_ID",
+        "DataType": "VARCHAR2",
+        "DataLength": 10,
+        "IsNullable": false,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "ACCOUNT_NO",
+        "DataType": "VARCHAR2",
+        "DataLength": 13,
+        "IsNullable": false,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "CUSTOMER_ID",
+        "DataType": "VARCHAR2",
+        "DataLength": 10,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "CELL_NO",
+        "DataType": "VARCHAR2",
+        "DataLength": 15,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "MSG_TXT",
+        "DataType": "VARCHAR2",
+        "DataLength": 500,
+        "IsNullable": false,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "MSG_SENT_FLAG",
+        "DataType": "NUMBER",
+        "DataLength": 22,
+        "IsNullable": false,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "REASON_FOR_FAIL",
+        "DataType": "VARCHAR2",
+        "DataLength": 255,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "SMS_INIT_TIME",
+        "DataType": "DATE",
+        "DataLength": 7,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "SMS_SENT_TIME",
+        "DataType": "DATE",
+        "DataLength": 7,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "SMS_TRY_NO",
+        "DataType": "NUMBER",
+        "DataLength": 22,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "SMS_FNC_ID",
+        "DataType": "NUMBER",
+        "DataLength": 22,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "NOTI_SENT_FLAG",
+        "DataType": "NUMBER",
+        "DataLength": 22,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "NOTI_SENT_TIME",
+        "DataType": "DATE",
+        "DataLength": 7,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "SMS_PROVIDER_MESSAGE_ID",
+        "DataType": "NUMBER",
+        "DataLength": 22,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "SMS_PROVIDER_STATUS_CODE",
+        "DataType": "NUMBER",
+        "DataLength": 22,
+        "IsNullable": true,
+        "DefaultValue": null
+      }
+    ],
+    "Constraints": []
+  },
+  {
+    "Id": 9,
+    "TableName": "ADC_SMS_MSG_REC",
+    "Columns": [
+      {
+        "ColumnName": "BRANCH_ID",
+        "DataType": "VARCHAR2",
+        "DataLength": 10,
+        "IsNullable": false,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "ACCOUNT_NO",
+        "DataType": "VARCHAR2",
+        "DataLength": 13,
+        "IsNullable": false,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "ACCOUNT_TITLE",
+        "DataType": "VARCHAR2",
+        "DataLength": 255,
+        "IsNullable": false,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "CUSTOMER_ID",
+        "DataType": "VARCHAR2",
+        "DataLength": 10,
+        "IsNullable": false,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "CELL_NO",
+        "DataType": "VARCHAR2",
+        "DataLength": 15,
+        "IsNullable": false,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "MSG_TYP_ID",
+        "DataType": "NUMBER",
+        "DataLength": 22,
+        "IsNullable": false,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "TRANS_DT",
+        "DataType": "DATE",
+        "DataLength": 7,
+        "IsNullable": false,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "DR_CR",
+        "DataType": "VARCHAR2",
+        "DataLength": 1,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "TRANS_AMT",
+        "DataType": "NUMBER",
+        "DataLength": 22,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "INSTL_AMT_SCH",
+        "DataType": "NUMBER",
+        "DataLength": 22,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "INSTL_AMT_LOAN",
+        "DataType": "NUMBER",
+        "DataLength": 22,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "BALANCE_AMT",
+        "DataType": "NUMBER",
+        "DataLength": 22,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "RENEWAL_DT",
+        "DataType": "DATE",
+        "DataLength": 7,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "MATURITY_DT",
+        "DataType": "DATE",
+        "DataLength": 7,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "INSTL_DT",
+        "DataType": "DATE",
+        "DataLength": 7,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "LON_CL_STATUS",
+        "DataType": "VARCHAR2",
+        "DataLength": 10,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "CURRENCY",
+        "DataType": "VARCHAR2",
+        "DataLength": 10,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "SMS_FNC_ID",
+        "DataType": "NUMBER",
+        "DataLength": 22,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "TRANS_AMOUNT_ID",
+        "DataType": "CHAR",
+        "DataLength": 3,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "TRANS_MODE",
+        "DataType": "NVARCHAR2",
+        "DataLength": 2,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "CHQ_PREFIX",
+        "DataType": "VARCHAR2",
+        "DataLength": 8,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "CHQ_NO",
+        "DataType": "NUMBER",
+        "DataLength": 22,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "BATCH_NO",
+        "DataType": "NUMBER",
+        "DataLength": 22,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "TRACER_NO",
+        "DataType": "NUMBER",
+        "DataLength": 22,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "BALANCE_CCY",
+        "DataType": "NUMBER",
+        "DataLength": 22,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "TRANS_BRANCH",
+        "DataType": "VARCHAR2",
+        "DataLength": 6,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "MAKE_BY",
+        "DataType": "VARCHAR2",
+        "DataLength": 15,
+        "IsNullable": true,
+        "DefaultValue": null
+      }
+    ],
+    "Constraints": []
+  },
+  {
+    "Id": 10,
+    "TableName": "ADC_SMS_MSG_REC_HIST",
+    "Columns": [
+      {
+        "ColumnName": "BRANCH_ID",
+        "DataType": "VARCHAR2",
+        "DataLength": 6,
+        "IsNullable": false,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "ACCOUNT_NO",
+        "DataType": "VARCHAR2",
+        "DataLength": 13,
+        "IsNullable": false,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "ACCOUNT_TITLE",
+        "DataType": "VARCHAR2",
+        "DataLength": 255,
+        "IsNullable": false,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "CUSTOMER_ID",
+        "DataType": "VARCHAR2",
+        "DataLength": 10,
+        "IsNullable": false,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "CELL_NO",
+        "DataType": "VARCHAR2",
+        "DataLength": 15,
+        "IsNullable": false,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "MSG_TYP_ID",
+        "DataType": "NUMBER",
+        "DataLength": 22,
+        "IsNullable": false,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "TRANS_DT",
+        "DataType": "DATE",
+        "DataLength": 7,
+        "IsNullable": false,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "DR_CR",
+        "DataType": "VARCHAR2",
+        "DataLength": 1,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "TRANS_AMT",
+        "DataType": "NUMBER",
+        "DataLength": 22,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "INSTL_AMT_SCH",
+        "DataType": "NUMBER",
+        "DataLength": 22,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "INSTL_AMT_LOAN",
+        "DataType": "NUMBER",
+        "DataLength": 22,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "BALANCE_AMT",
+        "DataType": "NUMBER",
+        "DataLength": 22,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "RENEWAL_DT",
+        "DataType": "DATE",
+        "DataLength": 7,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "MATURITY_DT",
+        "DataType": "DATE",
+        "DataLength": 7,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "INSTL_DT",
+        "DataType": "DATE",
+        "DataLength": 7,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "LON_CL_STATUS",
+        "DataType": "VARCHAR2",
+        "DataLength": 10,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "CURRENCY",
+        "DataType": "VARCHAR2",
+        "DataLength": 10,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "SMS_FNC_ID",
+        "DataType": "NUMBER",
+        "DataLength": 22,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "MAKE_BY",
+        "DataType": "VARCHAR2",
+        "DataLength": 15,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "TRANS_BRANCH",
+        "DataType": "VARCHAR2",
+        "DataLength": 6,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "CHQ_NO",
+        "DataType": "NUMBER",
+        "DataLength": 22,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "CHQ_PREFIX",
+        "DataType": "VARCHAR2",
+        "DataLength": 8,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "TRANS_MODE",
+        "DataType": "NVARCHAR2",
+        "DataLength": 2,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "TRANS_AMOUNT_ID",
+        "DataType": "CHAR",
+        "DataLength": 3,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "BATCH_NO",
+        "DataType": "NUMBER",
+        "DataLength": 22,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "TRACER_NO",
+        "DataType": "NUMBER",
+        "DataLength": 22,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "BALANCE_CCY",
+        "DataType": "NUMBER",
+        "DataLength": 22,
+        "IsNullable": true,
+        "DefaultValue": null
+      }
+    ],
+    "Constraints": []
+  },
+  {
+    "Id": 11,
+    "TableName": "ADC_SMS_MSG_TYP",
+    "Columns": [
+      {
+        "ColumnName": "MSG_TYP_ID",
+        "DataType": "NUMBER",
+        "DataLength": 22,
+        "IsNullable": false,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "MSG_TYP_NM",
+        "DataType": "VARCHAR2",
+        "DataLength": 255,
+        "IsNullable": false,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "LST_SYNC_TIME",
+        "DataType": "DATE",
+        "DataLength": 7,
+        "IsNullable": true,
+        "DefaultValue": null
+      }
+    ],
+    "Constraints": [
+      {
+        "ConstraintName": "PK_ADC_SMS_MSG_TYP",
+        "ConstraintType": "P",
+        "ColumnsDetails": [
+          {
+            "ColumnName": "MSG_TYP_ID",
+            "Position": 1,
+            "ParentTable": null,
+            "ParentColumn": null,
+            "Condition": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Id": 12,
+    "TableName": "ADC_SMS_PRD_REST",
+    "Columns": [
+      {
+        "ColumnName": "ID",
+        "DataType": "NUMBER",
+        "DataLength": 22,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "PRD_ID",
+        "DataType": "NUMBER",
+        "DataLength": 22,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "TYP_ID",
+        "DataType": "NUMBER",
+        "DataLength": 22,
+        "IsNullable": true,
+        "DefaultValue": null
+      }
+    ],
+    "Constraints": []
+  },
+  {
+    "Id": 13,
+    "TableName": "ADC_SMS_PRODUCT",
+    "Columns": [
+      {
+        "ColumnName": "PRODUCT_ID",
+        "DataType": "VARCHAR2",
+        "DataLength": 3,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "PRODUCT_TYPE",
+        "DataType": "VARCHAR2",
+        "DataLength": 4,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "PRODUCT_SUB_TYPE",
+        "DataType": "VARCHAR2",
+        "DataLength": 10,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "ACTIVE_FLAG",
+        "DataType": "NUMBER",
+        "DataLength": 22,
+        "IsNullable": true,
+        "DefaultValue": "1"
+      },
+      {
+        "ColumnName": "CREATE_DT",
+        "DataType": "DATE",
+        "DataLength": 7,
+        "IsNullable": true,
+        "DefaultValue": "SYSDATE"
+      },
+      {
+        "ColumnName": "MISS_CALL_FLAG",
+        "DataType": "NUMBER",
+        "DataLength": 22,
+        "IsNullable": true,
+        "DefaultValue": "1"
+      },
+      {
+        "ColumnName": "SMS_FLAG",
+        "DataType": "VARCHAR2",
+        "DataLength": 1,
+        "IsNullable": true,
+        "DefaultValue": "1"
+      },
+      {
+        "ColumnName": "EMAIL_FLAG",
+        "DataType": "VARCHAR2",
+        "DataLength": 1,
+        "IsNullable": true,
+        "DefaultValue": "0"
+      }
+    ],
+    "Constraints": []
+  },
+  {
+    "Id": 14,
+    "TableName": "ADC_SMS_SVC_ACC_REG",
+    "Columns": [
+      {
+        "ColumnName": "SMS_REG_SL_NO",
+        "DataType": "NUMBER",
+        "DataLength": 22,
+        "IsNullable": false,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "BRANCH_ID",
+        "DataType": "NVARCHAR2",
+        "DataLength": 20,
+        "IsNullable": false,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "ACCOUNT_NO",
+        "DataType": "NVARCHAR2",
+        "DataLength": 40,
+        "IsNullable": false,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "REG_STATUS",
+        "DataType": "NVARCHAR2",
+        "DataLength": 2,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "AUTH_STATUS_ID",
+        "DataType": "NVARCHAR2",
+        "DataLength": 2,
+        "IsNullable": false,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "MAKE_BY",
+        "DataType": "NVARCHAR2",
+        "DataLength": 30,
+        "IsNullable": false,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "MAKE_DT",
+        "DataType": "DATE",
+        "DataLength": 7,
+        "IsNullable": false,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "AUTH_1ST_BY",
+        "DataType": "NVARCHAR2",
+        "DataLength": 30,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "AUTH_1ST_DT",
+        "DataType": "DATE",
+        "DataLength": 7,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "AUTH_2ND_BY",
+        "DataType": "NVARCHAR2",
+        "DataLength": 30,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "AUTH_2ND_DT",
+        "DataType": "DATE",
+        "DataLength": 7,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "LAST_ACTION",
+        "DataType": "NVARCHAR2",
+        "DataLength": 6,
+        "IsNullable": false,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "ACCOUNT_TYPE",
+        "DataType": "NVARCHAR2",
+        "DataLength": 16,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "CUST_GROUP_ID",
+        "DataType": "NVARCHAR2",
+        "DataLength": 20,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "PIN_NO",
+        "DataType": "NVARCHAR2",
+        "DataLength": 200,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "CUST_AC_SL",
+        "DataType": "NUMBER",
+        "DataLength": 22,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "CREATE_BY",
+        "DataType": "NVARCHAR2",
+        "DataLength": 30,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "CREATE_DT",
+        "DataType": "DATE",
+        "DataLength": 7,
+        "IsNullable": true,
+        "DefaultValue": null
+      }
+    ],
+    "Constraints": [
+      {
+        "ConstraintName": "PK_SMS_SVC_ACC_REG",
+        "ConstraintType": "P",
+        "ColumnsDetails": [
+          {
+            "ColumnName": "SMS_REG_SL_NO",
+            "Position": 1,
+            "ParentTable": null,
+            "ParentColumn": null,
+            "Condition": null
+          }
+        ]
+      },
+      {
+        "ConstraintName": "UK_SMS_SVC_ACC_REG",
+        "ConstraintType": "U",
+        "ColumnsDetails": [
+          {
+            "ColumnName": "BRANCH_ID",
+            "Position": 1,
+            "ParentTable": null,
+            "ParentColumn": null,
+            "Condition": null
+          },
+          {
+            "ColumnName": "ACCOUNT_NO",
+            "Position": 2,
+            "ParentTable": null,
+            "ParentColumn": null,
+            "Condition": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Id": 15,
+    "TableName": "ADC_SMS_SVC_CELL_REG",
+    "Columns": [
+      {
+        "ColumnName": "CELL_REG_SL_NO",
+        "DataType": "NUMBER",
+        "DataLength": 22,
+        "IsNullable": false,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "SMS_REG_SL_NO",
+        "DataType": "NUMBER",
+        "DataLength": 22,
+        "IsNullable": false,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "MOBILE_NUMBER",
+        "DataType": "NVARCHAR2",
+        "DataLength": 40,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "AUTH_STATUS_ID",
+        "DataType": "NVARCHAR2",
+        "DataLength": 2,
+        "IsNullable": false,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "MAKE_BY",
+        "DataType": "NVARCHAR2",
+        "DataLength": 30,
+        "IsNullable": false,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "MAKE_DT",
+        "DataType": "DATE",
+        "DataLength": 7,
+        "IsNullable": false,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "AUTH_1ST_BY",
+        "DataType": "NVARCHAR2",
+        "DataLength": 30,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "AUTH_1ST_DT",
+        "DataType": "DATE",
+        "DataLength": 7,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "AUTH_2ND_BY",
+        "DataType": "NVARCHAR2",
+        "DataLength": 30,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "AUTH_2ND_DT",
+        "DataType": "DATE",
+        "DataLength": 7,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "LAST_ACTION",
+        "DataType": "NVARCHAR2",
+        "DataLength": 6,
+        "IsNullable": false,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "CUST_GROUP_ID",
+        "DataType": "NVARCHAR2",
+        "DataLength": 20,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "SERVICE_TYPE",
+        "DataType": "NVARCHAR2",
+        "DataLength": 2,
+        "IsNullable": false,
+        "DefaultValue": "\u0027T\u0027 "
+      },
+      {
+        "ColumnName": "EMAIL",
+        "DataType": "NVARCHAR2",
+        "DataLength": 100,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "CREATE_BY",
+        "DataType": "NVARCHAR2",
+        "DataLength": 30,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "CREATE_DT",
+        "DataType": "DATE",
+        "DataLength": 7,
+        "IsNullable": true,
+        "DefaultValue": null
+      }
+    ],
+    "Constraints": [
+      {
+        "ConstraintName": "FK_ADC_SMS_SVC_CELL_REG",
+        "ConstraintType": "R",
+        "ColumnsDetails": [
+          {
+            "ColumnName": "SMS_REG_SL_NO",
+            "Position": 1,
+            "ParentTable": "ADC_SMS_SVC_ACC_REG",
+            "ParentColumn": "SMS_REG_SL_NO",
+            "Condition": null
+          }
+        ]
+      },
+      {
+        "ConstraintName": "PK_ADC_SMS_SVC_CELL_REG",
+        "ConstraintType": "P",
+        "ColumnsDetails": [
+          {
+            "ColumnName": "CELL_REG_SL_NO",
+            "Position": 1,
+            "ParentTable": null,
+            "ParentColumn": null,
+            "Condition": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Id": 16,
+    "TableName": "ADC_TP_NOTIFICATION_INFO",
+    "Columns": [
+      {
+        "ColumnName": "REGISTRATION_ID",
+        "DataType": "NUMBER",
+        "DataLength": 22,
+        "IsNullable": false,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "NOTIFICATION_TEXT",
+        "DataType": "VARCHAR2",
+        "DataLength": 256,
+        "IsNullable": false,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "INIT_TIME",
+        "DataType": "DATE",
+        "DataLength": 7,
+        "IsNullable": false,
+        "DefaultValue": "sysdate "
+      },
+      {
+        "ColumnName": "SENT_TIME",
+        "DataType": "DATE",
+        "DataLength": 7,
+        "IsNullable": false,
+        "DefaultValue": "sysdate "
+      },
+      {
+        "ColumnName": "SENT_FLAG",
+        "DataType": "NUMBER",
+        "DataLength": 22,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "RESENT_TIME",
+        "DataType": "DATE",
+        "DataLength": 7,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "RESENT_FLAG",
+        "DataType": "NUMBER",
+        "DataLength": 22,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "RESENT_CYCLE",
+        "DataType": "NUMBER",
+        "DataLength": 22,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "FAILED_REASON",
+        "DataType": "VARCHAR2",
+        "DataLength": 4000,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "BRANCH_ID",
+        "DataType": "VARCHAR2",
+        "DataLength": 10,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "ACCOUNT_NUMBER",
+        "DataType": "VARCHAR2",
+        "DataLength": 13,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "CUSTOMER_ID",
+        "DataType": "VARCHAR2",
+        "DataLength": 10,
+        "IsNullable": true,
+        "DefaultValue": null
+      }
+    ],
+    "Constraints": []
+  },
+  {
+    "Id": 17,
+    "TableName": "ADDRESS_LIST_RONY",
+    "Columns": [
+      {
+        "ColumnName": "ADDRESS_ID",
+        "DataType": "NVARCHAR2",
+        "DataLength": 20,
+        "IsNullable": false,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "ADDRESS_TYPE_NM",
+        "DataType": "NVARCHAR2",
+        "DataLength": 40,
+        "IsNullable": false,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "ADDRESS_DETAILS",
+        "DataType": "NVARCHAR2",
+        "DataLength": 200,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "CITY",
+        "DataType": "NVARCHAR2",
+        "DataLength": 40,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "ZIP_CODE",
+        "DataType": "NVARCHAR2",
+        "DataLength": 14,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "COUNTRY_ID",
+        "DataType": "NVARCHAR2",
+        "DataLength": 20,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "DIVISION_ID",
+        "DataType": "NVARCHAR2",
+        "DataLength": 20,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "DISTRICT_ID",
+        "DataType": "NVARCHAR2",
+        "DataLength": 20,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "THANA_ID",
+        "DataType": "NVARCHAR2",
+        "DataLength": 20,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "PHONE_NO",
+        "DataType": "NVARCHAR2",
+        "DataLength": 40,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "MOBILE_NO",
+        "DataType": "NVARCHAR2",
+        "DataLength": 40,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "EMAIL",
+        "DataType": "NVARCHAR2",
+        "DataLength": 60,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "CUSTOMER_ID",
+        "DataType": "NVARCHAR2",
+        "DataLength": 20,
+        "IsNullable": false,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "AUTH_STATUS_ID",
+        "DataType": "NVARCHAR2",
+        "DataLength": 60,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "MAKE_BY",
+        "DataType": "NVARCHAR2",
+        "DataLength": 40,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "MAKE_DATE",
+        "DataType": "DATE",
+        "DataLength": 7,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "AUTH_1ST_BY",
+        "DataType": "NVARCHAR2",
+        "DataLength": 40,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "AUTH_1ST_DATE",
+        "DataType": "DATE",
+        "DataLength": 7,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "AUTH_2ND_BY",
+        "DataType": "NVARCHAR2",
+        "DataLength": 40,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "AUTH_2ND_DATE",
+        "DataType": "DATE",
+        "DataLength": 7,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "LAST_ACTION",
+        "DataType": "NVARCHAR2",
+        "DataLength": 40,
+        "IsNullable": true,
+        "DefaultValue": null
+      }
+    ],
+    "Constraints": []
+  },
+  {
+    "Id": 18,
+    "TableName": "ADDRESS_LIST_SA",
+    "Columns": [
+      {
+        "ColumnName": "ADDRESS_ID",
+        "DataType": "NVARCHAR2",
+        "DataLength": 20,
+        "IsNullable": false,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "ADDRESS_TYPE",
+        "DataType": "NVARCHAR2",
+        "DataLength": 40,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "ADDRESS",
+        "DataType": "NVARCHAR2",
+        "DataLength": 200,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "CITY_NAME",
+        "DataType": "NVARCHAR2",
+        "DataLength": 40,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "ZIP_CODE",
+        "DataType": "NVARCHAR2",
+        "DataLength": 14,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "COUNTRY_ID",
+        "DataType": "NVARCHAR2",
+        "DataLength": 20,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "COUNTRY_NAME",
+        "DataType": "NVARCHAR2",
+        "DataLength": 40,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "DIVISION_ID",
+        "DataType": "NVARCHAR2",
+        "DataLength": 20,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "DIVISION_NAME",
+        "DataType": "NVARCHAR2",
+        "DataLength": 40,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "DISTRICT_ID",
+        "DataType": "NVARCHAR2",
+        "DataLength": 20,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "DISTRICT_NAME",
+        "DataType": "NVARCHAR2",
+        "DataLength": 40,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "THANA_ID",
+        "DataType": "NVARCHAR2",
+        "DataLength": 20,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "THANA_NAME",
+        "DataType": "NVARCHAR2",
+        "DataLength": 40,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "PHONE_NO",
+        "DataType": "NVARCHAR2",
+        "DataLength": 40,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "MOBILE_NO",
+        "DataType": "NVARCHAR2",
+        "DataLength": 40,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "EMAIL",
+        "DataType": "NVARCHAR2",
+        "DataLength": 60,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "CUSTOMER_ID",
+        "DataType": "NVARCHAR2",
+        "DataLength": 20,
+        "IsNullable": false,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "AUTH_STATUS_ID",
+        "DataType": "NVARCHAR2",
+        "DataLength": 20,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "MAKE_BY",
+        "DataType": "NVARCHAR2",
+        "DataLength": 40,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "MAKE_DATE",
+        "DataType": "DATE",
+        "DataLength": 7,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "AUTH_1ST_BY",
+        "DataType": "NVARCHAR2",
+        "DataLength": 40,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "AUTH_1ST_DATE",
+        "DataType": "DATE",
+        "DataLength": 7,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "AUTH_2ND_BY",
+        "DataType": "NVARCHAR2",
+        "DataLength": 40,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "AUTH_2ND_DATE",
+        "DataType": "DATE",
+        "DataLength": 7,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "LAST_ACTION",
+        "DataType": "NVARCHAR2",
+        "DataLength": 40,
+        "IsNullable": true,
+        "DefaultValue": null
+      }
+    ],
+    "Constraints": []
+  },
+  {
+    "Id": 19,
+    "TableName": "ADDRESS_LIST_SKB",
+    "Columns": [
+      {
+        "ColumnName": "ADDRESSID",
+        "DataType": "NVARCHAR2",
+        "DataLength": 20,
+        "IsNullable": false,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "ADDRESSTYPE",
+        "DataType": "NVARCHAR2",
+        "DataLength": 100,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "ADDRESS",
+        "DataType": "NVARCHAR2",
+        "DataLength": 400,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "CITY",
+        "DataType": "NVARCHAR2",
+        "DataLength": 40,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "ZIP",
+        "DataType": "NVARCHAR2",
+        "DataLength": 100,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "COUNTRYNAME",
+        "DataType": "NVARCHAR2",
+        "DataLength": 100,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "DIVISIONNAME",
+        "DataType": "NVARCHAR2",
+        "DataLength": 100,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "DISTRICTNAME",
+        "DataType": "NVARCHAR2",
+        "DataLength": 100,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "THANANAME",
+        "DataType": "NVARCHAR2",
+        "DataLength": 100,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "PHONENO",
+        "DataType": "NVARCHAR2",
+        "DataLength": 100,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "MOBILENO",
+        "DataType": "NVARCHAR2",
+        "DataLength": 100,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "EMAIL",
+        "DataType": "NVARCHAR2",
+        "DataLength": 100,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "CUSTOMERID",
+        "DataType": "NVARCHAR2",
+        "DataLength": 20,
+        "IsNullable": false,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "COUNTRYID",
+        "DataType": "NVARCHAR2",
+        "DataLength": 10,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "DISTRICTID",
+        "DataType": "NVARCHAR2",
+        "DataLength": 10,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "THANAID",
+        "DataType": "NVARCHAR2",
+        "DataLength": 20,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "AUTH_STATUS_ID",
+        "DataType": "NVARCHAR2",
+        "DataLength": 2,
+        "IsNullable": false,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "MAKE_BY",
+        "DataType": "NVARCHAR2",
+        "DataLength": 30,
+        "IsNullable": false,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "MAKE_DT",
+        "DataType": "DATE",
+        "DataLength": 7,
+        "IsNullable": false,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "AUTH_1ST_BY",
+        "DataType": "NVARCHAR2",
+        "DataLength": 30,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "AUTH_1ST_DT",
+        "DataType": "DATE",
+        "DataLength": 7,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "AUTH_2ND_BY",
+        "DataType": "NVARCHAR2",
+        "DataLength": 30,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "AUTH_2ND_DT",
+        "DataType": "DATE",
+        "DataLength": 7,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "LAST_ACTION",
+        "DataType": "NVARCHAR2",
+        "DataLength": 6,
+        "IsNullable": false,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "DIVISIONID",
+        "DataType": "NVARCHAR2",
+        "DataLength": 10,
+        "IsNullable": true,
+        "DefaultValue": null
+      }
+    ],
+    "Constraints": []
+  },
+  {
+    "Id": 20,
+    "TableName": "ADDR_LIST_RMN",
+    "Columns": [
+      {
+        "ColumnName": "ADDR_TYPE",
+        "DataType": "NVARCHAR2",
+        "DataLength": 20,
+        "IsNullable": false,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "ADDR_ID",
+        "DataType": "NVARCHAR2",
+        "DataLength": 20,
+        "IsNullable": false,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "ADDRESS",
+        "DataType": "NVARCHAR2",
+        "DataLength": 80,
+        "IsNullable": false,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "DIVISION",
+        "DataType": "NVARCHAR2",
+        "DataLength": 80,
+        "IsNullable": false,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "COUNTRY",
+        "DataType": "NVARCHAR2",
+        "DataLength": 80,
+        "IsNullable": false,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "PHONE_NUMBER",
+        "DataType": "NVARCHAR2",
+        "DataLength": 80,
+        "IsNullable": false,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "ZIP",
+        "DataType": "NVARCHAR2",
+        "DataLength": 80,
+        "IsNullable": false,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "MOBILE_NUMBER",
+        "DataType": "NVARCHAR2",
+        "DataLength": 80,
+        "IsNullable": false,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "THANA",
+        "DataType": "NVARCHAR2",
+        "DataLength": 80,
+        "IsNullable": false,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "CITY",
+        "DataType": "NVARCHAR2",
+        "DataLength": 80,
+        "IsNullable": false,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "DISTRICT",
+        "DataType": "NVARCHAR2",
+        "DataLength": 80,
+        "IsNullable": false,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "EMAIL",
+        "DataType": "NVARCHAR2",
+        "DataLength": 80,
+        "IsNullable": false,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "CUSTOMER_ID",
+        "DataType": "NVARCHAR2",
+        "DataLength": 20,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "AUTH_STAT_ID",
+        "DataType": "NVARCHAR2",
+        "DataLength": 20,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "MADE_BY",
+        "DataType": "NVARCHAR2",
+        "DataLength": 80,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "MADE_DATE",
+        "DataType": "DATE",
+        "DataLength": 7,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "AUTH_1ST_BY",
+        "DataType": "NVARCHAR2",
+        "DataLength": 80,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "AUTH_1ST_DATE",
+        "DataType": "DATE",
+        "DataLength": 7,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "AUTH_2ND_BY",
+        "DataType": "NVARCHAR2",
+        "DataLength": 80,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "AUTH_2ND_DATE",
+        "DataType": "DATE",
+        "DataLength": 7,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "LAST_ACTION",
+        "DataType": "NVARCHAR2",
+        "DataLength": 10,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "COUNTRY_ID",
+        "DataType": "NVARCHAR2",
+        "DataLength": 20,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "DISTRICT_ID",
+        "DataType": "NVARCHAR2",
+        "DataLength": 20,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "THANA_ID",
+        "DataType": "NVARCHAR2",
+        "DataLength": 20,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "DIVISION_ID",
+        "DataType": "NVARCHAR2",
+        "DataLength": 20,
+        "IsNullable": true,
+        "DefaultValue": null
+      }
+    ],
+    "Constraints": [
+      {
+        "ConstraintName": "ADDR_PK",
+        "ConstraintType": "P",
+        "ColumnsDetails": [
+          {
+            "ColumnName": "ADDR_ID",
+            "Position": 1,
+            "ParentTable": null,
+            "ParentColumn": null,
+            "Condition": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Id": 21,
+    "TableName": "ADMIN_EVENT_ENTITY",
+    "Columns": [
+      {
+        "ColumnName": "ID",
+        "DataType": "VARCHAR2",
+        "DataLength": 36,
+        "IsNullable": false,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "ADMIN_EVENT_TIME",
+        "DataType": "NUMBER",
+        "DataLength": 22,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "REALM_ID",
+        "DataType": "VARCHAR2",
+        "DataLength": 255,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "OPERATION_TYPE",
+        "DataType": "VARCHAR2",
+        "DataLength": 255,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "AUTH_REALM_ID",
+        "DataType": "VARCHAR2",
+        "DataLength": 255,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "AUTH_CLIENT_ID",
+        "DataType": "VARCHAR2",
+        "DataLength": 255,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "AUTH_USER_ID",
+        "DataType": "VARCHAR2",
+        "DataLength": 255,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "IP_ADDRESS",
+        "DataType": "VARCHAR2",
+        "DataLength": 255,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "RESOURCE_PATH",
+        "DataType": "VARCHAR2",
+        "DataLength": 2550,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "REPRESENTATION",
+        "DataType": "CLOB",
+        "DataLength": 4000,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "ERROR",
+        "DataType": "VARCHAR2",
+        "DataLength": 255,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "RESOURCE_TYPE",
+        "DataType": "VARCHAR2",
+        "DataLength": 64,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "DETAILS_JSON",
+        "DataType": "NCLOB",
+        "DataLength": 4000,
+        "IsNullable": true,
+        "DefaultValue": null
+      }
+    ],
+    "Constraints": [
+      {
+        "ConstraintName": "CONSTRAINT_ADMIN_EVENT_ENTITY",
+        "ConstraintType": "P",
+        "ColumnsDetails": [
+          {
+            "ColumnName": "ID",
+            "Position": 1,
+            "ParentTable": null,
+            "ParentColumn": null,
+            "Condition": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Id": 22,
+    "TableName": "AGENT_ACC_LIST",
+    "Columns": [
+      {
+        "ColumnName": "ACC_NO",
+        "DataType": "NVARCHAR2",
+        "DataLength": 28,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "ACC_TITLE",
+        "DataType": "NVARCHAR2",
+        "DataLength": 200,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "ACC_TYPE",
+        "DataType": "NVARCHAR2",
+        "DataLength": 20,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "REQUEST_ID",
+        "DataType": "NVARCHAR2",
+        "DataLength": 200,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "BRANCH_ID",
+        "DataType": "NVARCHAR2",
+        "DataLength": 20,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "CURRENT_BAL",
+        "DataType": "NUMBER",
+        "DataLength": 22,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "PRINCIPAL_BAL",
+        "DataType": "NUMBER",
+        "DataLength": 22,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "TOT_INSTALL_NO",
+        "DataType": "NUMBER",
+        "DataLength": 22,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "DUE_INSTALL_NO",
+        "DataType": "NUMBER",
+        "DataLength": 22,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "PAID_INSTALL_NO",
+        "DataType": "NUMBER",
+        "DataLength": 22,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "OVERDUEINSTALL_NO",
+        "DataType": "NUMBER",
+        "DataLength": 22,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "OVEDUE_AMT",
+        "DataType": "NUMBER",
+        "DataLength": 22,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "PENAL_AMT",
+        "DataType": "NUMBER",
+        "DataLength": 22,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "PRINCIPAL_AMT",
+        "DataType": "NUMBER",
+        "DataLength": 22,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "INT_ACCRUED",
+        "DataType": "NUMBER",
+        "DataLength": 22,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "TAX_AMT",
+        "DataType": "NUMBER",
+        "DataLength": 22,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "EXCISE_DUTY",
+        "DataType": "NUMBER",
+        "DataLength": 22,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "TOT_PAYABLE_AMT",
+        "DataType": "NUMBER",
+        "DataLength": 22,
+        "IsNullable": true,
+        "DefaultValue": null
+      }
+    ],
+    "Constraints": []
+  },
+  {
+    "Id": 23,
+    "TableName": "AGENT_ERROR",
+    "Columns": [
+      {
+        "ColumnName": "USER_ID",
+        "DataType": "VARCHAR2",
+        "DataLength": 50,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "HOME_BRANCH_ID",
+        "DataType": "VARCHAR2",
+        "DataLength": 10,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "BIRTH_DATE",
+        "DataType": "DATE",
+        "DataLength": 7,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "CUSTOMER_ID",
+        "DataType": "VARCHAR2",
+        "DataLength": 30,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "ERCODE",
+        "DataType": "NUMBER",
+        "DataLength": 22,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "ERMSG",
+        "DataType": "VARCHAR2",
+        "DataLength": 100,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "ERROR_DATE",
+        "DataType": "DATE",
+        "DataLength": 7,
+        "IsNullable": true,
+        "DefaultValue": null
+      }
+    ],
+    "Constraints": []
+  },
+  {
+    "Id": 24,
+    "TableName": "AGENT_MINI_STATEMENT",
+    "Columns": [
+      {
+        "ColumnName": "REQUEST_ID",
+        "DataType": "NVARCHAR2",
+        "DataLength": 100,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "STATUS_DATE",
+        "DataType": "DATE",
+        "DataLength": 7,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "ACCOUNT_NO",
+        "DataType": "NVARCHAR2",
+        "DataLength": 30,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "BRANCH_ID",
+        "DataType": "NVARCHAR2",
+        "DataLength": 20,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "TRANS_ORDER",
+        "DataType": "NUMBER",
+        "DataLength": 22,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "AMOUNT",
+        "DataType": "NUMBER",
+        "DataLength": 22,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "TRANS_DRCR",
+        "DataType": "NVARCHAR2",
+        "DataLength": 4,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "NARRATION",
+        "DataType": "NVARCHAR2",
+        "DataLength": 500,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "CURRENT_BAL",
+        "DataType": "NUMBER",
+        "DataLength": 22,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "PRINCIPAL_BAL",
+        "DataType": "NUMBER",
+        "DataLength": 22,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "TRANS_NO",
+        "DataType": "NUMBER",
+        "DataLength": 22,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "ACC_TYPE",
+        "DataType": "NVARCHAR2",
+        "DataLength": 2,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "ACC_TITLE",
+        "DataType": "NVARCHAR2",
+        "DataLength": 300,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "TOT_INSTALL_NO",
+        "DataType": "NUMBER",
+        "DataLength": 22,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "DUE_INSTALL_NO",
+        "DataType": "NUMBER",
+        "DataLength": 22,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "PAID_INSTALL_NO",
+        "DataType": "NUMBER",
+        "DataLength": 22,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "OVERDUEINSTALL_NO",
+        "DataType": "NUMBER",
+        "DataLength": 22,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "OVEDUE_AMT",
+        "DataType": "NUMBER",
+        "DataLength": 22,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "PENAL_AMT",
+        "DataType": "NUMBER",
+        "DataLength": 22,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "PRINCIPAL_AMT",
+        "DataType": "NUMBER",
+        "DataLength": 22,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "INT_ACCRUED",
+        "DataType": "NUMBER",
+        "DataLength": 22,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "TAX_AMT",
+        "DataType": "NUMBER",
+        "DataLength": 22,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "EXCISE_DUTY",
+        "DataType": "NUMBER",
+        "DataLength": 22,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "TOT_PAYABLE_AMT",
+        "DataType": "NUMBER",
+        "DataLength": 22,
+        "IsNullable": true,
+        "DefaultValue": null
+      }
+    ],
+    "Constraints": []
+  },
+  {
+    "Id": 25,
+    "TableName": "AGENT_SCHEME_PROCESS",
+    "Columns": [
+      {
+        "ColumnName": "PUSER_ID",
+        "DataType": "NVARCHAR2",
+        "DataLength": 60,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "PBRANCH_ID",
+        "DataType": "NVARCHAR2",
+        "DataLength": 20,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "PPRODUCT_ID",
+        "DataType": "NVARCHAR2",
+        "DataLength": 10,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "PACC_TYPE",
+        "DataType": "NVARCHAR2",
+        "DataLength": 20,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "PACC_TITLE",
+        "DataType": "NVARCHAR2",
+        "DataLength": 400,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "PCUSTOMER_ID",
+        "DataType": "NVARCHAR2",
+        "DataLength": 24,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "PPRINCIPAL_AMT",
+        "DataType": "NUMBER",
+        "DataLength": 22,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "PINSTALL_AMT",
+        "DataType": "NUMBER",
+        "DataLength": 22,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "PNO_OF_AMT",
+        "DataType": "NUMBER",
+        "DataLength": 22,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "MAKE_DT",
+        "DataType": "DATE",
+        "DataLength": 7,
+        "IsNullable": true,
+        "DefaultValue": null
+      }
+    ],
+    "Constraints": []
+  },
+  {
+    "Id": 26,
+    "TableName": "AGENT_TIME_PROCESS",
+    "Columns": [
+      {
+        "ColumnName": "PUSER_ID",
+        "DataType": "NVARCHAR2",
+        "DataLength": 60,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "PBRANCH_ID",
+        "DataType": "NVARCHAR2",
+        "DataLength": 20,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "PPRODUCT_ID",
+        "DataType": "NVARCHAR2",
+        "DataLength": 10,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "PACC_TYPE",
+        "DataType": "NVARCHAR2",
+        "DataLength": 20,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "PACC_TITLE",
+        "DataType": "NVARCHAR2",
+        "DataLength": 400,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "PCUSTOMER_ID",
+        "DataType": "NVARCHAR2",
+        "DataLength": 24,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "PPRINCIPAL_AMT",
+        "DataType": "NUMBER",
+        "DataLength": 22,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "PINSTALL_AMT",
+        "DataType": "NUMBER",
+        "DataLength": 22,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "PNO_OF_AMT",
+        "DataType": "NUMBER",
+        "DataLength": 22,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "MAKE_DT",
+        "DataType": "DATE",
+        "DataLength": 7,
+        "IsNullable": true,
+        "DefaultValue": null
+      }
+    ],
+    "Constraints": []
+  },
+  {
+    "Id": 27,
+    "TableName": "AGENT_TRANSACTION_DETAILS",
+    "Columns": [
+      {
+        "ColumnName": "REQUEST_ID",
+        "DataType": "NVARCHAR2",
+        "DataLength": 100,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "TRANS_DATE",
+        "DataType": "DATE",
+        "DataLength": 7,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "ACCOUNT_NO",
+        "DataType": "NVARCHAR2",
+        "DataLength": 30,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "TRANS_BRANCH_ID",
+        "DataType": "NVARCHAR2",
+        "DataLength": 20,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "TRANS_ORDER",
+        "DataType": "NUMBER",
+        "DataLength": 22,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "AMOUNT",
+        "DataType": "NUMBER",
+        "DataLength": 22,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "TRANS_DRCR",
+        "DataType": "NVARCHAR2",
+        "DataLength": 4,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "NARRATION",
+        "DataType": "NVARCHAR2",
+        "DataLength": 300,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "AMOUNT_TYP",
+        "DataType": "NVARCHAR2",
+        "DataLength": 40,
+        "IsNullable": true,
+        "DefaultValue": null
+      }
+    ],
+    "Constraints": []
+  },
+  {
+    "Id": 28,
+    "TableName": "AGENT_TRANSACTION_DETAILS_HIST",
+    "Columns": [
+      {
+        "ColumnName": "REQUEST_ID",
+        "DataType": "NVARCHAR2",
+        "DataLength": 100,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "TRANS_DATE",
+        "DataType": "DATE",
+        "DataLength": 7,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "ACCOUNT_NO",
+        "DataType": "NVARCHAR2",
+        "DataLength": 30,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "TRANS_BRANCH_ID",
+        "DataType": "NVARCHAR2",
+        "DataLength": 20,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "TRANS_ORDER",
+        "DataType": "NUMBER",
+        "DataLength": 22,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "AMOUNT",
+        "DataType": "NUMBER",
+        "DataLength": 22,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "TRANS_DRCR",
+        "DataType": "NVARCHAR2",
+        "DataLength": 4,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "NARRATION",
+        "DataType": "NVARCHAR2",
+        "DataLength": 300,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "AMOUNT_TYP",
+        "DataType": "NVARCHAR2",
+        "DataLength": 40,
+        "IsNullable": true,
+        "DefaultValue": null
+      }
+    ],
+    "Constraints": []
+  },
+  {
+    "Id": 29,
+    "TableName": "AGENT_TRANSACTION_DETAILS_NEW",
+    "Columns": [
+      {
+        "ColumnName": "REQUEST_ID",
+        "DataType": "NVARCHAR2",
+        "DataLength": 100,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "TRANS_DATE",
+        "DataType": "DATE",
+        "DataLength": 7,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "DR_ACCOUNT_NO",
+        "DataType": "NVARCHAR2",
+        "DataLength": 34,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "CR_ACCOUNT_NO",
+        "DataType": "NVARCHAR2",
+        "DataLength": 34,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "TRANS_ORDER",
+        "DataType": "NUMBER",
+        "DataLength": 22,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "AMOUNT",
+        "DataType": "NUMBER",
+        "DataLength": 22,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "NARRATION",
+        "DataType": "NVARCHAR2",
+        "DataLength": 300,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "AMOUNT_TYP",
+        "DataType": "NVARCHAR2",
+        "DataLength": 40,
+        "IsNullable": true,
+        "DefaultValue": null
+      }
+    ],
+    "Constraints": []
+  },
+  {
+    "Id": 30,
+    "TableName": "ALERT_SVC_ACCOUNT_REG",
+    "Columns": [
+      {
+        "ColumnName": "NAS_REG_SL_NO",
+        "DataType": "NUMBER",
+        "DataLength": 22,
+        "IsNullable": false,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "CUSTOMER_TYPE_ID",
+        "DataType": "NVARCHAR2",
+        "DataLength": 2,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "CUST_GROUP_ID",
+        "DataType": "NVARCHAR2",
+        "DataLength": 20,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "BRANCH_ID",
+        "DataType": "NVARCHAR2",
+        "DataLength": 20,
+        "IsNullable": false,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "ACCOUNT_NO",
+        "DataType": "NVARCHAR2",
+        "DataLength": 40,
+        "IsNullable": false,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "PIN_NO",
+        "DataType": "NVARCHAR2",
+        "DataLength": 200,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "REG_STATUS",
+        "DataType": "NVARCHAR2",
+        "DataLength": 2,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "AUTH_STATUS_ID",
+        "DataType": "NVARCHAR2",
+        "DataLength": 2,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "MAKE_BY",
+        "DataType": "NVARCHAR2",
+        "DataLength": 30,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "MAKE_DT",
+        "DataType": "DATE",
+        "DataLength": 7,
+        "IsNullable": true,
+        "DefaultValue": "SYSDATE"
+      },
+      {
+        "ColumnName": "AUTH_1ST_BY",
+        "DataType": "NVARCHAR2",
+        "DataLength": 30,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "AUTH_1ST_DT",
+        "DataType": "DATE",
+        "DataLength": 7,
+        "IsNullable": true,
+        "DefaultValue": "SYSDATE"
+      },
+      {
+        "ColumnName": "AUTH_2ND_BY",
+        "DataType": "NVARCHAR2",
+        "DataLength": 30,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "AUTH_2ND_DT",
+        "DataType": "DATE",
+        "DataLength": 7,
+        "IsNullable": true,
+        "DefaultValue": "SYSDATE"
+      },
+      {
+        "ColumnName": "LAST_ACTION",
+        "DataType": "NVARCHAR2",
+        "DataLength": 6,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "CREATE_BY",
+        "DataType": "NVARCHAR2",
+        "DataLength": 30,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "CREATE_DT",
+        "DataType": "DATE",
+        "DataLength": 7,
+        "IsNullable": true,
+        "DefaultValue": "SYSDATE"
+      }
+    ],
+    "Constraints": [
+      {
+        "ConstraintName": "PK_NAS_SVC_ACC_REG",
+        "ConstraintType": "P",
+        "ColumnsDetails": [
+          {
+            "ColumnName": "NAS_REG_SL_NO",
+            "Position": 1,
+            "ParentTable": null,
+            "ParentColumn": null,
+            "Condition": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Id": 31,
+    "TableName": "ALERT_SVC_CONTACT_REG",
+    "Columns": [
+      {
+        "ColumnName": "CELL_REG_SL_NO",
+        "DataType": "NUMBER",
+        "DataLength": 22,
+        "IsNullable": false,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "CUST_GROUP_ID",
+        "DataType": "NVARCHAR2",
+        "DataLength": 20,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "SERVICE_TYPE",
+        "DataType": "NVARCHAR2",
+        "DataLength": 2,
+        "IsNullable": false,
+        "DefaultValue": "\u0027B\u0027 "
+      },
+      {
+        "ColumnName": "NAS_REG_SL_NO",
+        "DataType": "NUMBER",
+        "DataLength": 22,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "MOBILE_OPERATOR",
+        "DataType": "NVARCHAR2",
+        "DataLength": 50,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "MOBILE_NUMBER",
+        "DataType": "NVARCHAR2",
+        "DataLength": 40,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "EMAIL_ID",
+        "DataType": "NVARCHAR2",
+        "DataLength": 100,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "AUTH_STATUS_ID",
+        "DataType": "NVARCHAR2",
+        "DataLength": 2,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "MAKE_BY",
+        "DataType": "NVARCHAR2",
+        "DataLength": 30,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "MAKE_DT",
+        "DataType": "DATE",
+        "DataLength": 7,
+        "IsNullable": true,
+        "DefaultValue": "SYSDATE"
+      },
+      {
+        "ColumnName": "AUTH_1ST_BY",
+        "DataType": "NVARCHAR2",
+        "DataLength": 30,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "AUTH_1ST_DT",
+        "DataType": "DATE",
+        "DataLength": 7,
+        "IsNullable": true,
+        "DefaultValue": "SYSDATE"
+      },
+      {
+        "ColumnName": "AUTH_2ND_BY",
+        "DataType": "NVARCHAR2",
+        "DataLength": 30,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "AUTH_2ND_DT",
+        "DataType": "DATE",
+        "DataLength": 7,
+        "IsNullable": true,
+        "DefaultValue": "SYSDATE"
+      },
+      {
+        "ColumnName": "LAST_ACTION",
+        "DataType": "NVARCHAR2",
+        "DataLength": 6,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "CREATE_BY",
+        "DataType": "NVARCHAR2",
+        "DataLength": 30,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "CREATE_DT",
+        "DataType": "DATE",
+        "DataLength": 7,
+        "IsNullable": true,
+        "DefaultValue": "SYSDATE"
+      }
+    ],
+    "Constraints": [
+      {
+        "ConstraintName": "FK_NAS_SVC_CONTACT_REG_01",
+        "ConstraintType": "R",
+        "ColumnsDetails": [
+          {
+            "ColumnName": "NAS_REG_SL_NO",
+            "Position": 1,
+            "ParentTable": "ALERT_SVC_ACCOUNT_REG",
+            "ParentColumn": "NAS_REG_SL_NO",
+            "Condition": null
+          }
+        ]
+      },
+      {
+        "ConstraintName": "PK_NAS_SVC_CONTACT_REG",
+        "ConstraintType": "P",
+        "ColumnsDetails": [
+          {
+            "ColumnName": "CELL_REG_SL_NO",
+            "Position": 1,
+            "ParentTable": null,
+            "ParentColumn": null,
+            "Condition": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Id": 32,
+    "TableName": "ALERT_SVC_FUNCTION_PRODUCT",
+    "Columns": [
+      {
+        "ColumnName": "SL_NO",
+        "DataType": "NUMBER",
+        "DataLength": 22,
+        "IsNullable": false,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "MSG_FNC_ID",
+        "DataType": "NUMBER",
+        "DataLength": 22,
+        "IsNullable": false,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "PRODUCT_ID",
+        "DataType": "VARCHAR2",
+        "DataLength": 4,
+        "IsNullable": false,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "AUTH_STATUS_ID",
+        "DataType": "NVARCHAR2",
+        "DataLength": 2,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "MAKE_BY",
+        "DataType": "NVARCHAR2",
+        "DataLength": 30,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "MAKE_DT",
+        "DataType": "DATE",
+        "DataLength": 7,
+        "IsNullable": true,
+        "DefaultValue": "SYSDATE"
+      },
+      {
+        "ColumnName": "AUTH_1ST_BY",
+        "DataType": "NVARCHAR2",
+        "DataLength": 30,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "AUTH_1ST_DT",
+        "DataType": "DATE",
+        "DataLength": 7,
+        "IsNullable": true,
+        "DefaultValue": "SYSDATE"
+      },
+      {
+        "ColumnName": "AUTH_2ND_BY",
+        "DataType": "NVARCHAR2",
+        "DataLength": 30,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "AUTH_2ND_DT",
+        "DataType": "DATE",
+        "DataLength": 7,
+        "IsNullable": true,
+        "DefaultValue": "SYSDATE"
+      },
+      {
+        "ColumnName": "LAST_ACTION",
+        "DataType": "NVARCHAR2",
+        "DataLength": 6,
+        "IsNullable": true,
+        "DefaultValue": null
+      }
+    ],
+    "Constraints": [
+      {
+        "ConstraintName": "FK_NAS_SVC_FNC_PROD_01",
+        "ConstraintType": "R",
+        "ColumnsDetails": [
+          {
+            "ColumnName": "MSG_FNC_ID",
+            "Position": 1,
+            "ParentTable": "ALERT_SVC_MSG_FNC",
+            "ParentColumn": "MSG_FNC_ID",
+            "Condition": null
+          }
+        ]
+      },
+      {
+        "ConstraintName": "FK_NAS_SVC_FNC_PROD_02",
+        "ConstraintType": "R",
+        "ColumnsDetails": [
+          {
+            "ColumnName": "PRODUCT_ID",
+            "Position": 1,
+            "ParentTable": "ALERT_SVC_PRODUCT",
+            "ParentColumn": "PRODUCT_ID",
+            "Condition": null
+          }
+        ]
+      },
+      {
+        "ConstraintName": "PK_NAS_SVC_FNC_PROD",
+        "ConstraintType": "P",
+        "ColumnsDetails": [
+          {
+            "ColumnName": "SL_NO",
+            "Position": 1,
+            "ParentTable": null,
+            "ParentColumn": null,
+            "Condition": null
+          }
+        ]
+      },
+      {
+        "ConstraintName": "UK_NAS_SVC_FNC_PROD",
+        "ConstraintType": "U",
+        "ColumnsDetails": [
+          {
+            "ColumnName": "MSG_FNC_ID",
+            "Position": 1,
+            "ParentTable": null,
+            "ParentColumn": null,
+            "Condition": null
+          },
+          {
+            "ColumnName": "PRODUCT_ID",
+            "Position": 2,
+            "ParentTable": null,
+            "ParentColumn": null,
+            "Condition": null
+          },
+          {
+            "ColumnName": "SL_NO",
+            "Position": 3,
+            "ParentTable": null,
+            "ParentColumn": null,
+            "Condition": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Id": 33,
+    "TableName": "ALERT_SVC_INT_RATE_REG",
+    "Columns": [
+      {
+        "ColumnName": "BRANCH_ID",
+        "DataType": "VARCHAR2",
+        "DataLength": 50,
+        "IsNullable": false,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "ACCOUNT_NUMBER",
+        "DataType": "VARCHAR2",
+        "DataLength": 100,
+        "IsNullable": false,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "NEW_INT_RATE",
+        "DataType": "VARCHAR2",
+        "DataLength": 100,
+        "IsNullable": false,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "EFF_INT_DATE",
+        "DataType": "DATE",
+        "DataLength": 7,
+        "IsNullable": false,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "ALERT_FLAG",
+        "DataType": "NUMBER",
+        "DataLength": 22,
+        "IsNullable": false,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "CREATED_AT",
+        "DataType": "TIMESTAMP(6)",
+        "DataLength": 11,
+        "IsNullable": true,
+        "DefaultValue": "CURRENT_TIMESTAMP\n"
+      }
+    ],
+    "Constraints": []
+  },
+  {
+    "Id": 34,
+    "TableName": "ALERT_SVC_MSG_DAY_DEFINE",
+    "Columns": [
+      {
+        "ColumnName": "SL_NO",
+        "DataType": "NUMBER",
+        "DataLength": 22,
+        "IsNullable": false,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "MSG_FNC_ID",
+        "DataType": "NUMBER",
+        "DataLength": 22,
+        "IsNullable": false,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "WORKING_DAY",
+        "DataType": "NUMBER",
+        "DataLength": 22,
+        "IsNullable": false,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "AUTH_STATUS_ID",
+        "DataType": "NVARCHAR2",
+        "DataLength": 2,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "MAKE_BY",
+        "DataType": "NVARCHAR2",
+        "DataLength": 30,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "MAKE_DT",
+        "DataType": "DATE",
+        "DataLength": 7,
+        "IsNullable": true,
+        "DefaultValue": "SYSDATE"
+      },
+      {
+        "ColumnName": "AUTH_1ST_BY",
+        "DataType": "NVARCHAR2",
+        "DataLength": 30,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "AUTH_1ST_DT",
+        "DataType": "DATE",
+        "DataLength": 7,
+        "IsNullable": true,
+        "DefaultValue": "SYSDATE"
+      },
+      {
+        "ColumnName": "AUTH_2ND_BY",
+        "DataType": "NVARCHAR2",
+        "DataLength": 30,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "AUTH_2ND_DT",
+        "DataType": "DATE",
+        "DataLength": 7,
+        "IsNullable": true,
+        "DefaultValue": "SYSDATE"
+      },
+      {
+        "ColumnName": "LAST_ACTION",
+        "DataType": "NVARCHAR2",
+        "DataLength": 6,
+        "IsNullable": true,
+        "DefaultValue": null
+      }
+    ],
+    "Constraints": [
+      {
+        "ConstraintName": "FK_ALERT_SVC_MSG_DAY_DEFINE_01",
+        "ConstraintType": "R",
+        "ColumnsDetails": [
+          {
+            "ColumnName": "MSG_FNC_ID",
+            "Position": 1,
+            "ParentTable": "ALERT_SVC_MSG_FNC",
+            "ParentColumn": "MSG_FNC_ID",
+            "Condition": null
+          }
+        ]
+      },
+      {
+        "ConstraintName": "PK_ALERT_SVC_MSG_DAY_DEFINE",
+        "ConstraintType": "P",
+        "ColumnsDetails": [
+          {
+            "ColumnName": "SL_NO",
+            "Position": 1,
+            "ParentTable": null,
+            "ParentColumn": null,
+            "Condition": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Id": 35,
+    "TableName": "ALERT_SVC_MSG_FLD",
+    "Columns": [
+      {
+        "ColumnName": "MSG_FLD_ID",
+        "DataType": "VARCHAR2",
+        "DataLength": 4,
+        "IsNullable": false,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "MSG_FLD_NM",
+        "DataType": "VARCHAR2",
+        "DataLength": 255,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "AUTH_STATUS_ID",
+        "DataType": "NVARCHAR2",
+        "DataLength": 2,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "MAKE_BY",
+        "DataType": "NVARCHAR2",
+        "DataLength": 30,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "MAKE_DT",
+        "DataType": "DATE",
+        "DataLength": 7,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "AUTH_1ST_BY",
+        "DataType": "NVARCHAR2",
+        "DataLength": 30,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "AUTH_1ST_DT",
+        "DataType": "DATE",
+        "DataLength": 7,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "AUTH_2ND_BY",
+        "DataType": "NVARCHAR2",
+        "DataLength": 30,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "AUTH_2ND_DT",
+        "DataType": "DATE",
+        "DataLength": 7,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "LAST_ACTION",
+        "DataType": "NVARCHAR2",
+        "DataLength": 6,
+        "IsNullable": true,
+        "DefaultValue": null
+      }
+    ],
+    "Constraints": [
+      {
+        "ConstraintName": "PK_NAS_ALERT_MSG_FLD",
+        "ConstraintType": "P",
+        "ColumnsDetails": [
+          {
+            "ColumnName": "MSG_FLD_ID",
+            "Position": 1,
+            "ParentTable": null,
+            "ParentColumn": null,
+            "Condition": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Id": 36,
+    "TableName": "ALERT_SVC_MSG_FNC",
+    "Columns": [
+      {
+        "ColumnName": "MSG_FNC_ID",
+        "DataType": "NUMBER",
+        "DataLength": 22,
+        "IsNullable": false,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "MSG_FNC_NM",
+        "DataType": "VARCHAR2",
+        "DataLength": 255,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "MSG_TYP_ID",
+        "DataType": "NUMBER",
+        "DataLength": 22,
+        "IsNullable": false,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "MSG_TXT_DEF",
+        "DataType": "NVARCHAR2",
+        "DataLength": 1000,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "EMAIL_BODY",
+        "DataType": "CLOB",
+        "DataLength": 4000,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "BU_FNC_ID",
+        "DataType": "VARCHAR2",
+        "DataLength": 7,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "INCOMING_MSG",
+        "DataType": "VARCHAR2",
+        "DataLength": 160,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "MSG_CODE",
+        "DataType": "VARCHAR2",
+        "DataLength": 6,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "PROCESS_FREQ",
+        "DataType": "VARCHAR2",
+        "DataLength": 1,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "TIMER_SCAN_INTRV",
+        "DataType": "NUMBER",
+        "DataLength": 22,
+        "IsNullable": true,
+        "DefaultValue": "100"
+      },
+      {
+        "ColumnName": "PROCESS_LAST_EXEC",
+        "DataType": "DATE",
+        "DataLength": 7,
+        "IsNullable": true,
+        "DefaultValue": "sysdate"
+      },
+      {
+        "ColumnName": "PROCESS_NAME",
+        "DataType": "VARCHAR2",
+        "DataLength": 160,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "TRANS_STATUS_ID",
+        "DataType": "VARCHAR2",
+        "DataLength": 1,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "AUTH_STATUS_ID",
+        "DataType": "VARCHAR2",
+        "DataLength": 1,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "MAKE_BY",
+        "DataType": "VARCHAR2",
+        "DataLength": 15,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "MAKE_DT",
+        "DataType": "DATE",
+        "DataLength": 7,
+        "IsNullable": true,
+        "DefaultValue": "sysdate"
+      },
+      {
+        "ColumnName": "AUTH_1ST_BY",
+        "DataType": "VARCHAR2",
+        "DataLength": 15,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "AUTH_1ST_DT",
+        "DataType": "DATE",
+        "DataLength": 7,
+        "IsNullable": true,
+        "DefaultValue": "sysdate"
+      },
+      {
+        "ColumnName": "AUTH_2ND_BY",
+        "DataType": "VARCHAR2",
+        "DataLength": 15,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "AUTH_2ND_DT",
+        "DataType": "DATE",
+        "DataLength": 7,
+        "IsNullable": true,
+        "DefaultValue": "sysdate"
+      },
+      {
+        "ColumnName": "LAST_ACTION",
+        "DataType": "VARCHAR2",
+        "DataLength": 3,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "EMAIL_TEXT",
+        "DataType": "VARCHAR2",
+        "DataLength": 1000,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "EMAIL_SUBJECT",
+        "DataType": "VARCHAR2",
+        "DataLength": 160,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "FNC_START",
+        "DataType": "VARCHAR2",
+        "DataLength": 15,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "FNC_END",
+        "DataType": "VARCHAR2",
+        "DataLength": 15,
+        "IsNullable": true,
+        "DefaultValue": null
+      }
+    ],
+    "Constraints": [
+      {
+        "ConstraintName": "FK_NAS_ALERT_MSG_FNC_01",
+        "ConstraintType": "R",
+        "ColumnsDetails": [
+          {
+            "ColumnName": "MSG_TYP_ID",
+            "Position": 1,
+            "ParentTable": "ALERT_SVC_MSG_TYP",
+            "ParentColumn": "MSG_TYP_ID",
+            "Condition": null
+          }
+        ]
+      },
+      {
+        "ConstraintName": "PK_NAS_ALERT_MSG_FNC",
+        "ConstraintType": "P",
+        "ColumnsDetails": [
+          {
+            "ColumnName": "MSG_FNC_ID",
+            "Position": 1,
+            "ParentTable": null,
+            "ParentColumn": null,
+            "Condition": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Id": 37,
+    "TableName": "ALERT_SVC_MSG_HIST",
+    "Columns": [
+      {
+        "ColumnName": "ALERT_MSG_ID",
+        "DataType": "NUMBER",
+        "DataLength": 22,
+        "IsNullable": false,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "NAS_FNC_ID",
+        "DataType": "NUMBER",
+        "DataLength": 22,
+        "IsNullable": true,
+        "DefaultValue": "0"
+      },
+      {
+        "ColumnName": "CUSTOMER_ID",
+        "DataType": "VARCHAR2",
+        "DataLength": 10,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "BRANCH_ID",
+        "DataType": "VARCHAR2",
+        "DataLength": 10,
+        "IsNullable": false,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "ACCOUNT_NO",
+        "DataType": "VARCHAR2",
+        "DataLength": 13,
+        "IsNullable": false,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "MOBILE_OPERATOR",
+        "DataType": "NVARCHAR2",
+        "DataLength": 50,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "MOBILE_NUMBER",
+        "DataType": "VARCHAR2",
+        "DataLength": 15,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "SMS_TEXT",
+        "DataType": "VARCHAR2",
+        "DataLength": 500,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "SMS_SENT_FLAG",
+        "DataType": "NUMBER",
+        "DataLength": 22,
+        "IsNullable": false,
+        "DefaultValue": "0 "
+      },
+      {
+        "ColumnName": "SMS_INIT_TIME",
+        "DataType": "DATE",
+        "DataLength": 7,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "SMS_SENT_TIME",
+        "DataType": "DATE",
+        "DataLength": 7,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "SMS_TRY_NO",
+        "DataType": "NUMBER",
+        "DataLength": 22,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "EMAIL_SENT_FLAG",
+        "DataType": "NUMBER",
+        "DataLength": 22,
+        "IsNullable": false,
+        "DefaultValue": "0 "
+      },
+      {
+        "ColumnName": "EMAIL_ID",
+        "DataType": "VARCHAR2",
+        "DataLength": 15,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "EMAIL_BODY",
+        "DataType": "CLOB",
+        "DataLength": 4000,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "EMAIL_INIT_TIME",
+        "DataType": "DATE",
+        "DataLength": 7,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "EMAIL_SENT_TIME",
+        "DataType": "DATE",
+        "DataLength": 7,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "REASON_FOR_FAIL",
+        "DataType": "VARCHAR2",
+        "DataLength": 255,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "SMS_PROVIDER_MESSAGE_ID",
+        "DataType": "NUMBER",
+        "DataLength": 22,
+        "IsNullable": true,
+        "DefaultValue": "0"
+      },
+      {
+        "ColumnName": "SMS_PROVIDER_STATUS_CODE",
+        "DataType": "NUMBER",
+        "DataLength": 22,
+        "IsNullable": true,
+        "DefaultValue": null
+      }
+    ],
+    "Constraints": []
+  },
+  {
+    "Id": 38,
+    "TableName": "ALERT_SVC_MSG_REG",
+    "Columns": [
+      {
+        "ColumnName": "ALERT_MSG_ID",
+        "DataType": "NUMBER",
+        "DataLength": 22,
+        "IsNullable": false,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "NAS_FNC_ID",
+        "DataType": "NUMBER",
+        "DataLength": 22,
+        "IsNullable": true,
+        "DefaultValue": "0"
+      },
+      {
+        "ColumnName": "CUSTOMER_ID",
+        "DataType": "VARCHAR2",
+        "DataLength": 10,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "BRANCH_ID",
+        "DataType": "VARCHAR2",
+        "DataLength": 10,
+        "IsNullable": false,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "ACCOUNT_NO",
+        "DataType": "VARCHAR2",
+        "DataLength": 13,
+        "IsNullable": false,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "MOBILE_OPERATOR",
+        "DataType": "NVARCHAR2",
+        "DataLength": 50,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "MOBILE_NUMBER",
+        "DataType": "VARCHAR2",
+        "DataLength": 15,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "SMS_TEXT",
+        "DataType": "VARCHAR2",
+        "DataLength": 500,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "SMS_SENT_FLAG",
+        "DataType": "NUMBER",
+        "DataLength": 22,
+        "IsNullable": false,
+        "DefaultValue": "0 "
+      },
+      {
+        "ColumnName": "SMS_INIT_TIME",
+        "DataType": "DATE",
+        "DataLength": 7,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "SMS_SENT_TIME",
+        "DataType": "DATE",
+        "DataLength": 7,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "SMS_TRY_NO",
+        "DataType": "NUMBER",
+        "DataLength": 22,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "EMAIL_SENT_FLAG",
+        "DataType": "NUMBER",
+        "DataLength": 22,
+        "IsNullable": false,
+        "DefaultValue": "0 "
+      },
+      {
+        "ColumnName": "EMAIL_ID",
+        "DataType": "VARCHAR2",
+        "DataLength": 15,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "EMAIL_BODY",
+        "DataType": "CLOB",
+        "DataLength": 4000,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "EMAIL_INIT_TIME",
+        "DataType": "DATE",
+        "DataLength": 7,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "EMAIL_SENT_TIME",
+        "DataType": "DATE",
+        "DataLength": 7,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "REASON_FOR_FAIL",
+        "DataType": "NVARCHAR2",
+        "DataLength": 4000,
+        "IsNullable": true,
+        "DefaultValue": null
+      },
+      {
+        "ColumnName": "SMS_PROVIDER_MESSAGE_ID",
+        "DataType": "NUMBER",
+        "DataLength": 22,
+        "IsNullable": true,
+        "DefaultValue": "0"
+      },
+      {
+        "ColumnName": "SMS_PROVIDER_STATUS_CODE",
+        "DataType": "NUMBER",
+        "DataLength": 22,
+        "IsNullable": true,
+        "DefaultValue": null
+      }
+    ],
+    "Constraints": []
+  }
+]
