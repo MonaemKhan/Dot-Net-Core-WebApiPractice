@@ -1,7 +1,9 @@
 ﻿using Dapper;
+using DBMigrationProject.Classes;
 using Microsoft.AspNetCore.Mvc;
 using Oracle.ManagedDataAccess.Client;
 using System.Text.Json;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace DBMigrationProject.Controllers
 {
@@ -13,63 +15,8 @@ namespace DBMigrationProject.Controllers
         private readonly ILogger<CurrentDBController> _logger = logger;
         private readonly IWebHostEnvironment _env = env;
         private string _currentDBConnection { get => _configuration.GetValue<string>("ConnectionStrings:CurrentDBConnection"); }
-        public class TabelClass
-        {
-            public string table_name { get; set; }
-        }
-        public class ColumnClass
-        {
-            public string column_name { get; set; }
-            public string data_type { get; set; }
-            public int? data_length { get; set; }
-            public string nullable { get; set; }
-            public string data_default { get; set; }
-        }
-        public class ConstraintClass
-        {
-            public string constraint_name { get; set; }
-            public string constraint_type { get; set; }
-        }
-        public class ConstraintColumnClass
-        {
-            public string column_name { get; set; }
-            public int? position { get; set; }
-            public string parrent_table { get; set; }
-            public string parent_column { get; set; }
-            public string condition { get; set; }
-        }
+        private string _migratedDBConnection { get => _configuration.GetValue<string>("ConnectionStrings:MigrationConnection"); }
 
-        public class TableInfo
-        {
-            public int Id { get; set; }
-            public string TableName { get; set; }
-            public List<ColumnInfo> Columns { get; set; }
-            public List<ConstraintInfo> Constraints { get; set; }
-        }
-
-        public class ColumnInfo
-        {
-            public string ColumnName { get; set; }
-            public string DataType { get; set; }
-            public int? DataLength { get; set; }
-            public bool IsNullable { get; set; }
-            public string DefaultValue { get; set; }
-        }
-        public class ConstraintInfo
-        {
-            public string ConstraintName { get; set; }
-            public string ConstraintType { get; set; }
-            public List<ConstraintColumnInfo> ColumnsDetails { get; set; }
-        }
-
-        public class ConstraintColumnInfo
-        {
-            public string ColumnName { get; set; }
-            public int? Position { get; set; }
-            public string ParentTable { get; set; }
-            public string ParentColumn { get; set; }
-            public string Condition { get; set; }
-        }
 
         [HttpGet]
         public IActionResult GetCurrentDB()
@@ -98,8 +45,8 @@ namespace DBMigrationProject.Controllers
         }
 
         [HttpGet]
-        [Route("Import-Table")]
-        public async Task<IActionResult> ImportTable()
+        [Route("export-table")]
+        public async Task<IActionResult> ExportTable()
         {
             try
             {
@@ -290,6 +237,195 @@ namespace DBMigrationProject.Controllers
                 }
 
                 System.IO.File.WriteAllText(filePath, JsonSerializer.Serialize(tables, new JsonSerializerOptions
+                {
+                    WriteIndented = true
+                }));
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        [HttpGet]
+        [Route("export-table-data")]
+        public async Task<IActionResult> ExportTableData()
+        {
+            try
+            {
+                var uploadFolder = Path.Combine(_env.WebRootPath, "CurrentDbData");
+                string fileName = "TABLE_INFORMATION.json";
+                var filePath = Path.Combine(uploadFolder, fileName);
+                if (!System.IO.File.Exists(filePath))
+                {
+                    return NotFound("Table information file not found.");
+                }
+                var jsonData = System.IO.File.ReadAllText(filePath);
+                var tables = JsonSerializer.Deserialize<List<TableInfo>>(jsonData);
+                _logger.LogInformation($"Total tables found in JSON file: {tables.Count()}");
+                int i = 0;
+                int errorId = 0;
+                foreach (var table in tables)
+                {
+                    i = i + 1;
+                    _logger.LogInformation($"-------------- {i}. Processing table: {table.TableName} -------------- ");
+                    try
+                    {
+                        string query = $"Select * from {table.TableName}";
+                        using var _dbContext = new OracleConnection(_currentDBConnection);
+                        await _dbContext.OpenAsync();
+                        var result = await _dbContext.QueryAsync(query);
+                        await saveTableAsJson(result.ToList(), table.TableName);
+                    }
+                    catch (Exception ex)
+                    {
+                        errorId = errorId + 1;
+                        await saveErrorLogAsJson(errorId, table.TableName, ex.Message);
+                        _logger.LogError($"Error processing table {table.TableName}: {ex.Message}");
+                    }
+                    _logger.LogInformation($"-------------- End Processing table: {table.TableName} -------------- ");
+                }
+                _logger.LogInformation($"All tables data imported successfully and saved as JSON files in the wwwroot/CurrentDbData/TableData folder");
+                _logger.LogInformation($"Total tables processed: {i}; error {errorId}");
+                return Ok("Save Successfull");
+            }
+            catch (Exception ex)
+            {
+                return BadRequest($"Error reading table data: {ex.Message}");
+            }
+        }
+
+        [HttpGet]
+        [Route("Dummy")]
+        public async Task<IActionResult> GetTableInfo()
+        {
+            try
+            {
+                var uploadFolder = Path.Combine(_env.WebRootPath, "CurrentDbData");
+                string fileName = "TABLE_INFORMATION.json";
+                var filePath = Path.Combine(uploadFolder, fileName);
+                if (!System.IO.File.Exists(filePath))
+                {
+                    return NotFound("Table information file not found.");
+                }
+                var jsonData = System.IO.File.ReadAllText(filePath);
+                var tables = JsonSerializer.Deserialize<List<TableInfo>>(jsonData);
+
+                TableInfo table = tables.Where(x => x.TableName == "SYS_APP_CONFIG").First();
+                var columns = table.Columns.Select(x => x.ColumnName).ToList();
+                var Dbcolumns = string.Join(", ", columns.Select(k => $"{k}"));
+
+                string query = "Select * from SYS_APP_CONFIG";
+                using var _dbContext = new OracleConnection(_currentDBConnection);
+                await _dbContext.OpenAsync();
+
+                var result = await _dbContext.QueryAsync(query);
+                await saveTableAsJson(result.ToList(), table.TableName);
+
+
+                uploadFolder = Path.Combine(_env.WebRootPath, "CurrentDbData/TableData");
+                fileName = $"{table.TableName}.json";
+                filePath = Path.Combine(uploadFolder, fileName);
+                if (!System.IO.File.Exists(filePath))
+                {
+                    return NotFound("Table information file not found.");
+                }
+                jsonData = System.IO.File.ReadAllText(filePath);
+                var data = JsonSerializer.Deserialize<List<IDictionary<string, object>>>(jsonData);
+
+                string insertQuery = "";
+                foreach (IDictionary<string, object> item in data)
+                {
+                    var values = string.Join(", ", item.Values.Select(k =>
+                    {
+                        if (k is DateTime dt)
+                        {
+                            var dtString = dt.ToString("dd-MMM-yyyy");
+                            return $"'{dtString}'";
+                        }
+
+                        // Try parse if string
+                        if (DateTime.TryParse(k?.ToString(), out DateTime parsedDate))
+                        {
+                            var dtString = parsedDate.ToString("dd-MMM-yyyy");
+                            return $"'{dtString}'";
+                        }
+
+                        return $"'{k}'";
+                    }));
+                    insertQuery = $"INSERT INTO {table.TableName} ({Dbcolumns}) VALUES ({values})";
+                }
+
+                return Ok(insertQuery);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest($"Error reading table information: {ex.Message}");
+            }
+        }
+
+        private async Task saveTableAsJson(List<object> data, string TableName)
+        {
+            try
+            {
+                // Save the tables data list as a JSON file in the wwwroot/CurrentDbData/TableData folder
+                var uploadFolder = Path.Combine(_env.WebRootPath, "CurrentDbData/TableData");
+                if (!Directory.Exists(uploadFolder))
+                {
+                    Directory.CreateDirectory(uploadFolder);
+                }
+
+                string fileName = $"{TableName}.json";
+                var filePath = Path.Combine(uploadFolder, fileName);
+
+                if (System.IO.File.Exists(filePath))
+                {
+                    System.IO.File.Delete(filePath);
+                }
+
+                System.IO.File.WriteAllText(filePath, JsonSerializer.Serialize(data, new JsonSerializerOptions
+                {
+                    WriteIndented = true
+                }));
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        private async Task saveErrorLogAsJson(int count, string TableName, string message)
+        {
+            try
+            {
+                // Save the tables data list as a JSON file in the wwwroot/CurrentDbData folder
+                
+                var uploadFolder = Path.Combine(_env.WebRootPath, "CurrentDbData");
+                if (!Directory.Exists(uploadFolder))
+                {
+                    Directory.CreateDirectory(uploadFolder);
+                }
+                string fileName = $"ErrorLog.json";
+                var filePath = Path.Combine(uploadFolder, fileName);
+
+                List<ErrorLog> errorLogs = new List<ErrorLog>();
+
+                try
+                {
+                    var jsonData = System.IO.File.ReadAllText(filePath);
+                    errorLogs = JsonSerializer.Deserialize<List<ErrorLog>>(jsonData);
+                }
+                catch {
+                    errorLogs = new List<ErrorLog>();
+                }
+
+                errorLogs.Add(new ErrorLog
+                {
+                    Id = count,
+                    TableName = TableName,
+                    ErrorMessage = message
+                });
+                System.IO.File.WriteAllText(filePath, JsonSerializer.Serialize(errorLogs, new JsonSerializerOptions
                 {
                     WriteIndented = true
                 }));
