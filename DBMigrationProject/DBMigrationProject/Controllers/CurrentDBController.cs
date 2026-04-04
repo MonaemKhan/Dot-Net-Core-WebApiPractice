@@ -72,7 +72,7 @@ namespace DBMigrationProject.Controllers
                 int i = 0;
                 // now get the columns & contraint for each table and add them to the list of tables
                 int errorId = 0;
-                foreach (var tn in tableName)
+                foreach (var tn in tableName.Where(x=>x.table_name == "COR_TRANS_GL"))
                 {
                     i = i + 1;
                     TableInfo tableInfo = new TableInfo

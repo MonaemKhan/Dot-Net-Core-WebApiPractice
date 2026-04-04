@@ -64,7 +64,7 @@ namespace DBMigrationProject.Controllers
 
                     #region create table 
                     string createQuery = $"CREATE TABLE {table.TableName} ( ";
-                    var typesWithLength = new[] { "NVARCHAR2", "VARCHAR2", "NUMBER" };
+                    var typesWithLength = new[] { "NVARCHAR2", "VARCHAR2", "NUMBER","CHAR" };
                     foreach (var column in table.Columns)
                     {
                         createQuery += $"{column.ColumnName} {column.DataType}";
@@ -103,45 +103,53 @@ namespace DBMigrationProject.Controllers
                     var Dbcolumns = string.Join(", ", columns.Select(k => $"{k}"));
 
                     var data = await _com.getColumsData(table.TableName);
-                    _logger.LogInformation($"{i}.4 Found {data.Count} records to import for table: {table.TableName}");
+                    _logger.LogWarning($"{i}.4 Found {data.Count} records to import for table: {table.TableName}");
 
                     int j = 0;
                     int errorCount = 0;
+                    string insertQuery = $"INSERT All ";
                     foreach (IDictionary<string, object> item in data)
                     {
                         j++;
                         _logger.LogInformation($"--------{i}.{j}. Processing record for table: {table.TableName}");
-                        string insertQuery = "";
+
                         var values = string.Join(", ", item.Values.Select(k =>
                         {
-                            if (k is DateTime dt)
+                            string str = k?.ToString() ?? "";
+                            if (str.Contains("."))
                             {
-                                var dtString = dt.ToString("dd-MMM-yyyy");
-                                return $"'{dtString}'";
+                                if (decimal.TryParse(str, out decimal parsedDecimal))
+                                {
+                                    return parsedDecimal.ToString();
+                                }
                             }
-
-                            // Try parse if string
-                            if (DateTime.TryParse(k?.ToString(), out DateTime parsedDate))
+                            if (DateTime.TryParse(str, out DateTime parsedDate))
                             {
                                 var dtString = parsedDate.ToString("dd-MMM-yyyy");
                                 return $"'{dtString}'";
                             }
-
-                            return $"'{k}'";
+                            else
+                            {
+                                return $"'{k?.ToString()?.Replace("'", "")}'";
+                            }
                         }));
-                        insertQuery = $"INSERT INTO {table.TableName} ({Dbcolumns}) VALUES ({values})";
-                        _logger.LogInformation($"\r\t{insertQuery}");
-                        try
-                        {
-                            await _dbContext.QueryAsync(insertQuery);
-                        }
-                        catch (Exception ex)
-                        {
-                            errorCount++;
-                            _logger.LogError($"Error processing record for table: {table.TableName}. Error: {ex.Message}");
-                            await _com.saveErrorLogs(errorCount, "InsertError", table.TableName, insertQuery, ex.Message);
-                        }
+                        insertQuery = insertQuery + $"\t\nINTO {table.TableName} ({Dbcolumns}) VALUES  ({values})";
                     }
+                    insertQuery = insertQuery.TrimEnd(',', ' ');
+                    insertQuery = insertQuery + " SELECT * FROM DUAL";
+                    _logger.LogInformation($"\r\t{insertQuery}");
+
+                    try
+                    {
+                        await _dbContext.QueryAsync(insertQuery);
+                    }
+                    catch (Exception ex)
+                    {
+                        errorCount++;
+                        _logger.LogError($"Error processing record for table: {table.TableName}. Error: {ex.Message}");
+                        await _com.saveErrorLogs(errorCount, "InsertError", table.TableName, insertQuery, ex.Message);
+                    }
+                    _logger.LogInformation($"--------{i}.5 Data imported for table: {table.TableName} with {errorCount} errors");
                     #endregion 
 
 
@@ -280,7 +288,7 @@ namespace DBMigrationProject.Controllers
                     _logger.LogInformation($"--------{i}. Importing table: {table.TableName}");
 
                     string createQuery = $"CREATE TABLE {table.TableName} ( ";
-                    var typesWithLength = new[] { "NVARCHAR2", "VARCHAR2", "NUMBER" };
+                    var typesWithLength = new[] { "NVARCHAR2", "VARCHAR2", "NUMBER", "CHAR" };
                     foreach (var column in table.Columns)
                     {
                         createQuery += $"{column.ColumnName} {column.DataType}";
@@ -345,44 +353,52 @@ namespace DBMigrationProject.Controllers
 
                     int j = 0;
                     int errorCount = 0;
+                    string insertQuery = $"INSERT All ";
                     foreach (IDictionary<string, object> item in data)
                     {
                         j++;
                         _logger.LogInformation($"--------{i}.{j}. Processing record for table: {table.TableName}");
-                        string insertQuery = "";
+                        
                         var values = string.Join(", ", item.Values.Select(k =>
                         {
-                            if (k is DateTime dt)
+                            string str = k?.ToString() ?? "";
+                            if (str.Contains("."))
                             {
-                                var dtString = dt.ToString("dd-MMM-yyyy");
-                                return $"'{dtString}'";
+                                if (decimal.TryParse(str, out decimal parsedDecimal))
+                                {
+                                    return parsedDecimal.ToString();
+                                }
                             }
-
-                            // Try parse if string
-                            if (DateTime.TryParse(k?.ToString(), out DateTime parsedDate))
+                            if (DateTime.TryParse(str, out DateTime parsedDate))
                             {
                                 var dtString = parsedDate.ToString("dd-MMM-yyyy");
                                 return $"'{dtString}'";
                             }
-
-                            return $"'{k}'";
+                            else
+                            {
+                                return $"'{k?.ToString()?.Replace("'", "")}'";
+                            }
                         }));
-                        insertQuery = $"INSERT INTO {table.TableName} ({Dbcolumns}) VALUES ({values})";
-                        _logger.LogInformation($"\r\t{insertQuery}");
-                        try
-                        {
-                            using var _dbContext = new OracleConnection(_migratedDBConnection);
-                            await _dbContext.OpenAsync();
-
-                            await _dbContext.QueryAsync(insertQuery);
-                        }
-                        catch (Exception ex)
-                        {
-                            errorCount++;
-                            _logger.LogError($"Error processing record for table: {table.TableName}. Error: {ex.Message}");
-                            await _com.saveErrorLogs(errorCount, "InsertError", table.TableName, insertQuery, ex.Message);
-                        }
+                        insertQuery = insertQuery + $"\t\nINTO {table.TableName} ({Dbcolumns}) VALUES  ({values})"; 
                     }
+                    insertQuery = insertQuery.TrimEnd(',', ' ');
+                    insertQuery = insertQuery + " SELECT * FROM DUAL";
+                    _logger.LogInformation($"\r\t{insertQuery}");
+
+                    try
+                    {
+                        using var _dbContext = new OracleConnection(_migratedDBConnection);
+                        await _dbContext.OpenAsync();
+
+                        await _dbContext.QueryAsync(insertQuery);
+                    }
+                    catch (Exception ex)
+                    {
+                        errorCount++;
+                        _logger.LogError($"Error processing record for table: {table.TableName}. Error: {ex.Message}");
+                        await _com.saveErrorLogs(errorCount, "InsertError", table.TableName, insertQuery, ex.Message);
+                    }
+                    _logger.LogInformation($"--------{i}. Importing data complete for table: {table.TableName}");
 
                 }
                 return Ok("ALL Data Inserted");
