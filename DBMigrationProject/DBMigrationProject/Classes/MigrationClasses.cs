@@ -64,4 +64,12 @@
         public string TableName { get; set; }
         public string ErrorMessage { get; set; }
     }
+
+    public class ErrorLogMigration
+    {
+        public int Id { get; set; }
+        public string TableName { get; set; }
+        public string ErrorMessage { get; set; }
+        public string Query { get; set; }
+    }
 }
