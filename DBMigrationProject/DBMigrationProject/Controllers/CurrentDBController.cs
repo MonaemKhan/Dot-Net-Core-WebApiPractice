@@ -3,8 +3,6 @@ using DBMigrationProject.Classes;
 using DBMigrationProject.Service;
 using Microsoft.AspNetCore.Mvc;
 using Oracle.ManagedDataAccess.Client;
-using System.Text.Json;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace DBMigrationProject.Controllers
 {
@@ -47,8 +45,6 @@ namespace DBMigrationProject.Controllers
 
         [HttpGet]
         [Route("export-db")]
-        [HttpGet]
-        [Route("export-table")]
         public async Task<IActionResult> ExportDB()
         {
             try

@@ -57,6 +57,7 @@ namespace DBMigrationProject.Controllers
                 using var _dbContext = new OracleConnection(_migratedDBConnection);
                 await _dbContext.OpenAsync();
 
+                #region create tables and import data
                 int i = 0;
                 foreach (var table in tables)
                 {
@@ -134,9 +135,6 @@ namespace DBMigrationProject.Controllers
                         _logger.LogInformation($"\r\t{insertQuery}");
                         try
                         {
-                            using var _dbContext = new OracleConnection(_migratedDBConnection);
-                            await _dbContext.OpenAsync();
-
                             await _dbContext.QueryAsync(insertQuery);
                         }
                         catch (Exception ex)
@@ -151,7 +149,117 @@ namespace DBMigrationProject.Controllers
 
                     _logger.LogInformation($"-------- -- END --- {i}. Table imported: {table.TableName}");
                 }
-                return Ok();
+                #endregion
+
+                #region create constraints
+                _logger.LogInformation($"-------- Starting to add constraints for tables");
+                i = 0;
+                foreach (var table in tables)
+                {
+                    i++;
+                    _logger.LogInformation($"--------{i}. Accessing contraint for table: {table.TableName}");
+
+                    int j = 0;
+                    int errorCount = 0;
+                    int PK = 0;
+                    int FK = 0;
+                    int UK = 0;
+                    int CC = 0;
+                    foreach (var constraint in table.Constraints)
+                    {
+                        j++;
+                        _logger.LogInformation($"--------{i}.{j}. Processing constraint: {constraint.ConstraintName} for table: {table.TableName}");
+
+                        string columns = string.Join(", ", constraint.ColumnsDetails.Select(c => c.ColumnName));
+                        string contrainName = "";
+                        string constraintType = "";
+
+                        #region get constrain name based on type
+                        if (constraint.ConstraintType == "P")
+                        {
+                            contrainName = $"PK_{table.TableName}";
+                            if (PK > 0)
+                            {
+                                contrainName += $"_{PK.ToString().PadLeft(2, '0')}";
+                            }
+                            PK++;
+                            constraintType = "PRIMARY KEY";
+                        }
+                        else if (constraint.ConstraintType == "U")
+                        {
+                            contrainName = $"UK_{table.TableName}";
+                            if (UK > 0)
+                            {
+                                contrainName += $"_{UK.ToString().PadLeft(2, '0')}";
+                            }
+                            UK++;
+                            constraintType = "UNIQUE";
+                        }
+                        else if (constraint.ConstraintType == "R")
+                        {
+                            contrainName = $"FK_{table.TableName}";
+                            if (FK > 0)
+                            {
+                                contrainName += $"_{FK.ToString().PadLeft(2, '0')}";
+                            }
+                            FK++;
+                            constraintType = "FOREIGN KEY";
+                        }
+                        else if (constraint.ConstraintType == "C")
+                        {
+                            contrainName = $"CC_{table.TableName}";
+                            if (CC > 0)
+                            {
+                                contrainName += $"_{CC.ToString().PadLeft(2, '0')}";
+                            }
+                            CC++;
+                            constraintType = "";
+                        }
+                        else
+                        {
+                            contrainName = "";
+                            constraintType = "";
+                        }
+                        #endregion
+
+                        string constraintQuery = $"ALTER TABLE {table.TableName} " +
+                                $"ADD CONSTRAINT {contrainName} " +
+                                $"{constraintType} " +
+                                $"({columns}) ";
+                        if (constraint.ConstraintType == "R")
+                        {
+                            var refTable = constraint.ColumnsDetails.FirstOrDefault();
+                            var refColumn = string.Join(", ", constraint.ColumnsDetails.Select(c => c.ColumnName));
+                            constraintQuery = constraintQuery + $" references {refTable.ParentTable} ({refColumn})";
+                        }
+                        else if (constraint.ConstraintType == "C")
+                        {
+                            var condition = constraint.ColumnsDetails.FirstOrDefault()?.Condition;
+                            constraintQuery = $"ALTER TABLE {table.TableName} " +
+                                $"ADD CONSTRAINT {contrainName} ";
+                            if (!string.IsNullOrEmpty(condition))
+                            {
+                                constraintQuery = constraintQuery + $" CHECK ({condition})";
+                            }
+                        }
+
+                        _logger.LogInformation($"\r\t{constraintQuery}");
+                        try
+                        {
+                            await _dbContext.QueryAsync(constraintQuery);
+                        }
+                        catch (Exception ex)
+                        {
+                            errorCount++;
+                            _logger.LogError($"Error processing constraint: {constraint.ConstraintName} for table: {table.TableName}. Error: {ex.Message}");
+                            await _com.saveErrorLogs(errorCount, "ConstraintError", table.TableName, constraintQuery, ex.Message);
+                        }
+                    }
+                }
+                _logger.LogInformation($"-------- Finished adding constraints for tables");
+                #endregion 
+
+                return Ok("DB Imported Succesfull");
             }
             catch (Exception ex)
             {
@@ -209,7 +317,7 @@ namespace DBMigrationProject.Controllers
                     }
                     _logger.LogInformation($"-------- -- END --- {i}. Table imported: {table.TableName}");
                 }
-                return Ok();
+                return Ok("All Table Created");
             }
             catch (Exception ex)
             {
@@ -279,7 +387,7 @@ namespace DBMigrationProject.Controllers
                     }
 
                 }
-                return Ok();
+                return Ok("ALL Data Inserted");
             }
             catch (Exception ex)
             {
@@ -293,6 +401,7 @@ namespace DBMigrationProject.Controllers
         {
             try
             {
+                string output = "";
                 var tables = await _com.getTableInfos();
 
                 _logger.LogInformation($"Found {tables.Count} tables to import.");
@@ -301,7 +410,7 @@ namespace DBMigrationProject.Controllers
                 {
                     i++;
                     _logger.LogInformation($"--------{i}. Accessing contraint for table: {table.TableName}");
-                    
+
                     int j = 0;
                     int errorCount = 0;
                     int PK = 0;
@@ -312,7 +421,7 @@ namespace DBMigrationProject.Controllers
                     {
                         j++;
                         _logger.LogInformation($"--------{i}.{j}. Processing constraint: {constraint.ConstraintName} for table: {table.TableName}");
-                        
+
                         string columns = string.Join(", ", constraint.ColumnsDetails.Select(c => c.ColumnName));
                         string contrainName = "";
                         string constraintType = "";
@@ -321,9 +430,9 @@ namespace DBMigrationProject.Controllers
                         if (constraint.ConstraintType == "P")
                         {
                             contrainName = $"PK_{table.TableName}";
-                            if(PK > 0)
+                            if (PK > 0)
                             {
-                                contrainName += $"_{PK.ToString().PadLeft(2,'0')}";
+                                contrainName += $"_{PK.ToString().PadLeft(2, '0')}";
                             }
                             PK++;
                             constraintType = "PRIMARY KEY";
@@ -356,7 +465,7 @@ namespace DBMigrationProject.Controllers
                                 contrainName += $"_{CC.ToString().PadLeft(2, '0')}";
                             }
                             CC++;
-                            constraintType = "CHECK";
+                            constraintType = "";
                         }
                         else
                         {
@@ -368,15 +477,18 @@ namespace DBMigrationProject.Controllers
                         string constraintQuery = $"ALTER TABLE {table.TableName} " +
                                 $"ADD CONSTRAINT {contrainName} " +
                                 $"{constraintType} " +
-                                $"({columns}))";
-                        if(constraint.ConstraintType == "R")
+                                $"({columns}) ";
+                        if (constraint.ConstraintType == "R")
                         {
                             var refTable = constraint.ColumnsDetails.FirstOrDefault();
                             var refColumn = string.Join(", ", constraint.ColumnsDetails.Select(c => c.ColumnName));
                             constraintQuery = constraintQuery + $" references {refTable.ParentTable} ({refColumn})";
-                        }else if(constraint.ConstraintType == "C")
+                        }
+                        else if (constraint.ConstraintType == "C")
                         {
                             var condition = constraint.ColumnsDetails.FirstOrDefault()?.Condition;
+                            constraintQuery = $"ALTER TABLE {table.TableName} " +
+                                $"ADD CONSTRAINT {contrainName} ";
                             if (!string.IsNullOrEmpty(condition))
                             {
                                 constraintQuery = constraintQuery + $" CHECK ({condition})";
@@ -394,17 +506,16 @@ namespace DBMigrationProject.Controllers
                         {
                             errorCount++;
                             _logger.LogError($"Error processing constraint: {constraint.ConstraintName} for table: {table.TableName}. Error: {ex.Message}");
-                            await _com.saveErrorLogs(errorCount,"ConstraintError", table.TableName, constraintQuery, ex.Message);
+                            await _com.saveErrorLogs(errorCount, "ConstraintError", table.TableName, constraintQuery, ex.Message);
                         }
                     }
                 }
-                return Ok();
+                return Ok("Add Constraint Success");
             }
             catch (Exception ex)
             {
                 return BadRequest($"Error reading table information: {ex.Message}");
             }
         }
-
     }
 }
