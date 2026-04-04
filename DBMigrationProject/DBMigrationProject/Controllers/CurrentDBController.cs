@@ -208,7 +208,7 @@ namespace DBMigrationProject.Controllers
                     {
                         string query = $"Select * from {tn.table_name}";
                         var result = await _dbContext.QueryAsync(query);
-                        if(result != null)
+                        if (result != null)
                             await _com.saveTableData(result.ToList(), tn.table_name);
                     }
                     catch (Exception ex)
@@ -401,7 +401,7 @@ namespace DBMigrationProject.Controllers
             {
                 return BadRequest($"Error to CurrentDB: {ex.Message}");
             }
-        }        
+        }
 
         [HttpGet]
         [Route("export-table-data")]
@@ -428,7 +428,7 @@ namespace DBMigrationProject.Controllers
                     catch (Exception ex)
                     {
                         errorId = errorId + 1;
-                        await _com.saveErrorLogs(errorId,"DataInserError", table.TableName,"", ex.Message);
+                        await _com.saveErrorLogs(errorId, "DataInserError", table.TableName, "", ex.Message);
                         _logger.LogError($"Error processing table {table.TableName}: {ex.Message}");
                     }
                     _logger.LogInformation($"-------------- End Processing table: {table.TableName} -------------- ");

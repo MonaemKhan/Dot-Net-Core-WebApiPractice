@@ -1,9 +1,7 @@
 ﻿using Dapper;
-using DBMigrationProject.Classes;
 using DBMigrationProject.Service;
 using Microsoft.AspNetCore.Mvc;
 using Oracle.ManagedDataAccess.Client;
-using System.Text.Json;
 
 namespace DBMigrationProject.Controllers
 {
@@ -280,7 +278,7 @@ namespace DBMigrationProject.Controllers
                 {
                     i++;
                     _logger.LogInformation($"--------{i}. Importing table: {table.TableName}");
-                    
+
                     string createQuery = $"CREATE TABLE {table.TableName} ( ";
                     var typesWithLength = new[] { "NVARCHAR2", "VARCHAR2", "NUMBER" };
                     foreach (var column in table.Columns)
@@ -290,7 +288,7 @@ namespace DBMigrationProject.Controllers
                         {
                             createQuery += $"({column.DataLength.Value})";
                         }
-                        if(column.DefaultValue != null)
+                        if (column.DefaultValue != null)
                         {
                             createQuery += $" DEFAULT {column.DefaultValue}";
                         }
@@ -313,7 +311,7 @@ namespace DBMigrationProject.Controllers
                     catch (Exception ex)
                     {
                         _logger.LogError($"Error creating table: {table.TableName}. Error: {ex.Message}");
-                        await _com.saveErrorLogs(i,"TableCreationError", table.TableName, createQuery, ex.Message);
+                        await _com.saveErrorLogs(i, "TableCreationError", table.TableName, createQuery, ex.Message);
                     }
                     _logger.LogInformation($"-------- -- END --- {i}. Table imported: {table.TableName}");
                 }
@@ -341,7 +339,7 @@ namespace DBMigrationProject.Controllers
                     _logger.LogInformation($"--------{i}. Importing data for table: {table.TableName}");
                     var columns = table.Columns.Select(x => x.ColumnName).ToList();
                     var Dbcolumns = string.Join(", ", columns.Select(k => $"{k}"));
-                                       
+
                     var data = await _com.getColumsData(table.TableName);
                     _logger.LogInformation($"Found {data.Count} records to import for table: {table.TableName}");
 
@@ -382,7 +380,7 @@ namespace DBMigrationProject.Controllers
                         {
                             errorCount++;
                             _logger.LogError($"Error processing record for table: {table.TableName}. Error: {ex.Message}");
-                            await _com.saveErrorLogs(errorCount,"InsertError", table.TableName, insertQuery, ex.Message);
+                            await _com.saveErrorLogs(errorCount, "InsertError", table.TableName, insertQuery, ex.Message);
                         }
                     }
 
@@ -401,7 +399,6 @@ namespace DBMigrationProject.Controllers
         {
             try
             {
-                string output = "";
                 var tables = await _com.getTableInfos();
 
                 _logger.LogInformation($"Found {tables.Count} tables to import.");
